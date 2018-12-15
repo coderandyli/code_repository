@@ -22,13 +22,13 @@ public class MongoPortController {
     private MongoPortService mongoPortService;
 
     @GetMapping("/{code}")
-    public String findPortByCode(@PathVariable("code") String code){
+    public String findPortByCode(@PathVariable("code") String code) {
         Ports port = mongoPortService.findPortsByCode(code);
         return port.toString();
     }
 
     @GetMapping("/all")
-    public List<Ports> findAllPort(){
+    public List<Ports> findAllPort() {
         return mongoPortService.findAllPorts();
     }
 }

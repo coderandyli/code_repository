@@ -19,6 +19,7 @@ public interface PortsRepository extends MongoRepository<Ports, String> {
 
     /**
      * 查找添加的 port
+     *
      * @return
      */
     @Query("{'isAdd':true}")
@@ -26,12 +27,14 @@ public interface PortsRepository extends MongoRepository<Ports, String> {
 
     /**
      * 通过name查询
+     *
      * @return
      */
     Ports findByName();
 
     /**
      * 通过Code查询
+     *
      * @return
      */
     Ports findByCode(String code);
