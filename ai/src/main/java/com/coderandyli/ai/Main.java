@@ -16,6 +16,7 @@ public class Main {
             str = str.replace("?","!");
             str = str.replace("？", "!");
             System.out.println(str);
+            
         }
     }
 
