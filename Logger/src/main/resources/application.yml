@@ -1,0 +1,10 @@
+# 使用 yml 文件对logback日志简单配置
+#logging:
+#  # 日志文件路径
+#  file: /Users/lizhen/test_file/logger.log
+#  pattern:
+#    # 输出日志格式
+#    console: "%d - %msg%n"
+#  # 日志输出级别
+#  level:
+#    com.coderandyli.logger.LoggerTest: debug
