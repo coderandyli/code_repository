@@ -2,6 +2,7 @@ package com.coderandyli.service;
 
 import com.github.dadiyang.httpinvoker.annotation.HttpApi;
 import com.github.dadiyang.httpinvoker.annotation.HttpReq;
+import com.github.dadiyang.httpinvoker.annotation.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -14,4 +15,5 @@ public interface StudentService {
 
     @HttpReq("/list")
     List<Map<String, Object>> getStudentList();
+
 }

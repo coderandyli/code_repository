@@ -25,8 +25,11 @@ public class FutureTaskTest {
      *
      */
     public static String test2() throws Exception {
+
+        long startTime = System.currentTimeMillis();
+
         // 创建线程池
-        ExecutorService executorService = Executors.newCachedThreadPool();
+        ExecutorService executorService = Executors.newFixedThreadPool(3); //Executors.newCachedThreadPool();
 
         // 获取数据A
         FutureTask<String> futureTaskB = new FutureTask<String>(()->{
@@ -53,6 +56,9 @@ public class FutureTaskTest {
 
         // 关闭线程
         executorService.shutdown();
+
+        long endTime = System.currentTimeMillis();
+        log.debug("执行时间：{}", endTime - startTime);
 
         return "taskA finish";
     }
