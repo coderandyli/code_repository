@@ -20,19 +20,35 @@ public class ExcelController {
         ExcelData data = new ExcelData();
         data.setName("hello");
         List<String> titles = new ArrayList();
-        titles.add("a1");
-        titles.add("a2");
-        titles.add("a3");
+        titles.add("委托方");
+        titles.add("代理方");
+        titles.add("航程信息");
+        titles.add("港口港区");
+        titles.add("ETA");
+        titles.add("ETB");
+        titles.add("ETD");
+        titles.add("订单服务项");
+        titles.add("订单状态");
+        titles.add("报价");
+        titles.add("总价");
         data.setTitles(titles);
 
         List<List<Object>> rows = new ArrayList();
         List<Object> row = new ArrayList();
-        row.add("11111111111");
-        row.add("22222222222");
-        row.add("3333333333");
+        row.add("振振委托方");
+        row.add("振振代理方");
+        row.add("航程信息001");
+        row.add("港口，港区");
+        row.add("ETA时间");
+        row.add("ETB时间");
+        row.add("ETD时间");
+        row.add("服务项信息");
+        row.add("服务中");
+        row.add("$100");
+        row.add("$100");
         rows.add(row);
-
         data.setRows(rows);
+        data.setName("order");
 
 
         //生成本地
@@ -40,6 +56,6 @@ public class ExcelController {
         FileOutputStream out = new FileOutputStream(f);
         ExportExcelUtils.exportExcel(data, out);
         out.close();*/
-        ExportExcelUtils.exportExcel(response, "hello.xlsx", data);
+        ExportExcelUtils.exportExcel(response, "order.xlsx", data);
     }
 }
