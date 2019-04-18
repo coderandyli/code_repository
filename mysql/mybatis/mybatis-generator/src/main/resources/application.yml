@@ -5,4 +5,4 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123456
-    url: jdbc:mysql://39.104.124.39:3306/eports_dev?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    url: jdbc:mysql://localhost:3306/dl_user_dev?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
