@@ -10,13 +10,15 @@ import java.util.UUID;
 
 /**
  * Created by lizhen on 2019-04-18
+ *
+ * 演示 堆内存溢出 与 非堆内存溢出
  */
 @RestController
 @RequestMapping("/menory")
 public class MemoryController {
 
-    private List<User> userList = new ArrayList<User>();
-    private List<Class<?>>  classList = new ArrayList<Class<?>>();
+    private List<User> userList = new ArrayList<>();
+    private List<Class<?>>  classList = new ArrayList<>();
 
     /**
      * 堆内存溢出

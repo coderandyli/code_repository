@@ -40,6 +40,10 @@ public class SingleLinkedList {
      * @param data
      */
     public void add(int index, int data) {
+        if (index == 0){ // index = 0,插入头结点
+            this.addFirstNode(data);
+            return;
+        }
         Node node = new Node(data);
         Node current = first;
         Node previous = first;
