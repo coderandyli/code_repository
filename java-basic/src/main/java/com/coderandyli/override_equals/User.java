@@ -20,11 +20,12 @@ public class User {
 
     @Override
     public boolean equals(Object obj) {
-        // 1、自反性 (是否是同一对象)
-        if (this == obj) return true;
 
         // null一律返回fase
         if (obj == null) return false;
+
+        // 1、自反性 (是否是同一对象)
+        if (this == obj) return true;
 
         // 比较是否是同一类型, 择一
         if (getClass() != obj.getClass()) return false;
