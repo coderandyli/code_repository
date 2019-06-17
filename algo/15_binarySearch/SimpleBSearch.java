@@ -1,10 +1,8 @@
 /**
- * Created by lizhen on 2019-06-16
- *
- * 二分查找
+ * Created by lizhen on 2019-06-17
+ * 简单二分查找 实现 （数据集合中不存在重复数据）
  */
-public class Main {
-
+public class SimpleBSearch {
 
     /**
      *  二分查找的递归实现
@@ -62,8 +60,7 @@ public class Main {
     public static void main(String args[]) {
         int[] array = {1, 2, 3, 4, 5, 6};
 
-        int bsearch = new Main().bsearch(array, array.length, 2);
+        int bsearch = new SimpleBSearch().bsearch(array, array.length, 2);
         System.out.println(bsearch);
     }
-
 }
