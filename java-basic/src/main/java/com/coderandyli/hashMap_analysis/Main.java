@@ -39,6 +39,33 @@ public class Main {
         String put = map.put("name", "andy");
     }
 
+    /**
+     * HashMap 散列函数测试
+     */
+    @Test
+    public void test03(){
+//        String key = "key";
+//        String key = "key1";
+//        String key = "key11";
+//        String key = "key111";
+//        String key = "key1111";
+        String key = "key11111";
+
+
+        int index1 = hash("");
+        System.out.println(index1);
+
+        int index2 = hash(key) & (10 - 1);
+        System.out.println(index2);
+    }
+
+
+
+    static final int hash(Object key) {
+        int h;
+        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+    }
+
 
 
 }

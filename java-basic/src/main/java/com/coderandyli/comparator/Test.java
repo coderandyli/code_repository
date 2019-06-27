@@ -59,7 +59,7 @@ public class Test {
 
 
         // 1.1 根据id排序 正序 （内部类实现）
-        /*Collections.sort(users, test.new CompareIds(true));*/
+        Collections.sort(users, test.new CompareIds(true));
 
         // 1.2 根据id排序 倒序 （内部类实现）
         /*Collections.sort(users, test.new CompareIds(false));*/
@@ -200,6 +200,20 @@ public class Test {
             this.asced = asced;
         }
 
+
+        /**
+         * --------------------官方推荐写法 --------------------
+         *  -------- 升序 -------
+         * if(o1<o2)  return -1; //(不交换顺序）
+         * if(o1==o2)  return 0; //或者返回1效果是一样的；-1相同元素会发生位置调整（虽然两个相同的数字交换顺序没影响，但如果是map元素则有影响）
+         * if(o1>o2)  return 1; //交换顺序
+         *
+         *  ---------- 降序 -----------
+         if(o1>o2)  return -1; //(不交换顺序）
+         if(o1==o2)  return 0; //或者返回1效果是一样的；-1相同元素会发生位置调整（虽然两个相同的数字交换顺序没影响，但如果是map元素则有影响）
+         if(o1<o2)  return 1; //交换顺序
+         *
+         */
         @Override
         public int compare(Test.User u1, Test.User u2) {
 
