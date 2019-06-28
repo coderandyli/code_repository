@@ -216,7 +216,6 @@ public class Test {
          */
         @Override
         public int compare(Test.User u1, Test.User u2) {
-
             int id1 = asced ? u1.getId() : u2.getId();
             int id2 = asced ? u2.getId() : u1.getId();
 

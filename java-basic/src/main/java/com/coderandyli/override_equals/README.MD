@@ -20,7 +20,12 @@
 
 * **任何非空引用 x.euqals(null) 都应返回 false**
 
-* **重写equalse时，也要重写hashCode方法**
+* **重写equals时，也要重写hashCode方法**
+
+
+### 集合处理
+* 自定义类作为集合的key值时，必须重写自定义类的equals和hashCode方法，详见Main方法
+    
 
 ### reference
 [java重写equals()方法和hashCode()方法](https://blog.csdn.net/panchao888888/article/details/80888592)

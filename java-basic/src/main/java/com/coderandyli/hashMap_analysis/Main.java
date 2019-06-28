@@ -2,6 +2,7 @@ package com.coderandyli.hashMap_analysis;
 
 import com.coderandyli.hashMap_analysis.SingleLinkedList.SingleLinkedList;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.message.StringFormattedMessage;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -14,6 +15,9 @@ import java.util.Map;
  */
 @Slf4j
 public class Main {
+
+    public Main() {
+    }
 
     /**
      * 单链表测试
@@ -44,28 +48,49 @@ public class Main {
      */
     @Test
     public void test03(){
-//        String key = "key";
-//        String key = "key1";
-//        String key = "key11";
-//        String key = "key111";
-//        String key = "key1111";
-        String key = "key11111";
+        String key = "abc";
 
-
-        int index1 = hash("");
+        int index1 = hash(key);
         System.out.println(index1);
 
-        int index2 = hash(key) & (10 - 1);
-        System.out.println(index2);
+        int capicity = 16; // 散列表大小
+        int index2 = hash(key) & (capicity - 1); // HashMap 计算的最终hash值
+        System.out.println("HashMap 计算的最终hash值 = " +index2);
+
+        int i = key.hashCode();
+        System.out.println(i);
+        System.out.println("获取abc的hashCode = "+hashCode());
     }
-
-
 
     static final int hash(Object key) {
         int h;
         return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+//        return (key == null) ? 0 : (96354) ^ (96354 >>> 16);
     }
+    
+    
+    /**
+     * =============================================================================
+     * =========          以下 String 的 hashCode方法             =========
+     * =============================================================================
+     */
 
+    /** The value is used for character storage. */
+    private final char value[] = {'a','b', 'c'};
 
+    /** Cache the hash code for the string */
+    private int hash; // Default to 0
 
+    public int hashCode() {
+        int h = hash;
+        if (h == 0 && value.length > 0) {
+            char val[] = value;
+
+            for (int i = 0; i < value.length; i++) {
+                h = 31 * h + val[i];
+            }
+            hash = h;
+        }
+        return h;
+    }
 }
