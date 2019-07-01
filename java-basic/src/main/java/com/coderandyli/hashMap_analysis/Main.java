@@ -64,14 +64,16 @@ public class Main {
 
     static final int hash(Object key) {
         int h;
-        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
-//        return (key == null) ? 0 : (96354) ^ (96354 >>> 16);
+//        return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
+
+        int hashValue =  96354; // 字符串abc的hashCode
+        return (key == null) ? 0 : (hashValue) ^ (hashValue >>> 16);
     }
     
     
     /**
      * =============================================================================
-     * =========          以下 String 的 hashCode方法             =========
+     * =========          以下 String 的 hashCode方法  示例:获取的是abc的hashCode=96354             =========
      * =============================================================================
      */
 
