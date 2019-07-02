@@ -1,8 +1,7 @@
-package com.coderandyli.hashMap_analysis;
+package com.coderandyli.source_analysis.hashMap;
 
-import com.coderandyli.hashMap_analysis.SingleLinkedList.SingleLinkedList;
+import com.coderandyli.source_analysis.hashMap.SingleLinkedList.SingleLinkedList;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.logging.log4j.message.StringFormattedMessage;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -37,10 +36,20 @@ public class Main {
         linkList.displayAllNodes();
     }
 
+    /**
+     * HashMap
+     */
     @Test
     public void test01(){
-        Map<String, String> map = new HashMap<>();
-        String put = map.put("name", "andy");
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(1, 11);
+        map.put(2, 22);
+        map.put(3, 33);
+        map.put(4, 44);
+
+        for (Map.Entry e: map.entrySet()) {
+            log.info("{}", e.getKey());
+        }
     }
 
     /**

@@ -1,4 +1,4 @@
-package com.coderandyli.hashMap_analysis;
+package com.coderandyli.source_analysis.hashMap;
 
 /**
  * Created by lizhen on 2019-07-01
