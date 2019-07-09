@@ -1,4 +1,4 @@
-package ConsistentHash;
+package consistentHash;
 
 import java.util.*;
 

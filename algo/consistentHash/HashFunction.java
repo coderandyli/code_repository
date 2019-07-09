@@ -1,4 +1,4 @@
-package ConsistentHash;
+package consistentHash;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
