@@ -4,12 +4,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 
 /**
  * Created by lizhen on 2019-06-22
  * <p>
- * java 中数据精度问题
+ * java 中浮点数数据精度问题
  *
  * 将十进制浮点数转换为二进制浮点数时，小数的二进制有时也是不可能精确的，
  * 就如同十进制不能准确表示1/3，二进制也无法准确表示1/10，
@@ -75,5 +74,12 @@ public class Main {
         log.info("divide.floatValue() = {}", divide.floatValue());
         log.info("divide.doubleValue() = {}", divide.doubleValue());
         log.info("divide.toString() = {}", divide.toString());
+    }
+
+    @Test
+    public void test03(){
+        double a = 0.4f;
+        double b = 0.2f;
+        System.out.println(a + b);
     }
 }

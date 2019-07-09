@@ -15,7 +15,7 @@ public class Main {
     @Test
     public void test01(){
 
-        // 10 是初始大小，0.75 是装载因子，true 是表示按照访问时间排序 最近访问的元素会排雷在队末尾
+        // 10 是初始大小，0.75 是装载因子，true 是表示按照访问时间排序 最近访问的元素会排在队末尾
         HashMap<Integer, Integer> m = new LinkedHashMap<>(10, 0.75f, true);
         m.put(3, 11);
         m.put(1, 12);
