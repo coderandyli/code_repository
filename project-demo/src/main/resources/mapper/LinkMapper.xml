@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.coderandyli.project.mapper.LinkMapper">
+
+    <resultMap type="com.coderandyli.project.entity.Link" id="linkMap">
+        <result property="id" column="id"/>
+        <result property="originalUrl" column="original_url"/>
+        <result property="shortUrl" column="short_url"/>
+        <result property="type" column="type"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="idUsed" column="id_used"/>
+    </resultMap>
+
+    <select id="isExistOriginalUrl" resultType="java.lang.Integer">
+        select 1 from link where original_url = #{originalUrl,jdbcType=VARCHAR} limit 1
+    </select>
+
+    <select id="selectShortUrlByOriginalUrl" resultType="java.lang.String">
+        select short_url from link where original_url = #{originalUrl,jdbcType=VARCHAR} limit 1
+    </select>
+    <select id="isExistShortUrl" resultType="java.lang.Integer">
+        select 1 from link where short_url = #{shortUrl,jdbcType=VARCHAR} limit 1
+    </select>
+    <select id="selectIdByType" resultType="java.lang.String">
+      select id from link where `type` = #{custom} and id_used = 0 limit 1
+    </select>
+
+</mapper>
