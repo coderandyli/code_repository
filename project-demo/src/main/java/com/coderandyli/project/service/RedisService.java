@@ -119,6 +119,7 @@ public class RedisService {
         return result;
     }
 
+
     /**
      * 自增
      * @param key
@@ -128,6 +129,40 @@ public class RedisService {
         ValueOperations<Serializable, Object> operations = redisTemplate.opsForValue();
         return operations.increment(key);
     }
+
+    /**
+     * =============================================================================
+     * =========          BitMap             =========
+     * =============================================================================
+     */
+
+    /**
+     * 设值
+     * @param key
+     * @param offset
+     * @param value
+     * @return
+     */
+    public Boolean setBit(String key, long offset, boolean value){
+        ValueOperations<Serializable, String> operations = redisTemplate.opsForValue();
+        return operations.setBit(key, offset, value);
+    }
+
+    /**
+     * 查看是否存在
+     * @param key
+     * @param offset
+     * @return
+     */
+    public Boolean getBit(String key, long offset){
+        ValueOperations<Serializable, String> operations = redisTemplate.opsForValue();
+        return operations.getBit(key, offset);
+    }
+
+//    public void test(){
+//        ValueOperations<Serializable, String> operations = redisTemplate.opsForValue();
+//        operations.bitField()
+//    }
 
     /**
      * =============================================================================
@@ -331,6 +366,5 @@ public class RedisService {
         ZSetOperations<String, Object> zset = redisTemplate.opsForZSet();
         return zset.score(key, value);
     }
-
 
 }

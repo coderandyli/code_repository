@@ -59,9 +59,9 @@ public class ShortUrlServiceImpl implements ShortUrlService {
 
             Link link = new Link(id, originalUrl, shortUrl, LinkEnum.system, new Date(), new Date(), false);
             linkMapper.insert(link);
-
+            return spliceShortUrl(shortUrl);
         } else { // 自定义短url
-            //todo
+            //todo 自定义短url未实现
 
         }
         return null;

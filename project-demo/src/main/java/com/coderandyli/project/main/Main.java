@@ -12,7 +12,7 @@ import java.net.URL;
 public class Main {
 
     public static void main(String args[]) {
-        String widthAndHeight = getWidthAndHeight("http://192.168.30.103:8888/group1/M00/00/37/wKgeZ10wFKmAbEoiAD4uYT9rf38103.jpg");
+        String widthAndHeight = getWidthAndHeight("http://192.168.30.103:8888/group1/M00/00/31/wKgeZ10cOZWAGeF6AANoTw82h08579.jpg");
         System.out.println(widthAndHeight);
     }
 
