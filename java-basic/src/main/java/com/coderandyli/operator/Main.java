@@ -171,4 +171,13 @@ public class Main {
         log.debug("a % b = {}", a % b);
         log.debug("a & (b-1) = {}", a & (b-1));
     }
+
+    @Test
+    public void test08(){
+        int a = 7;
+        int b = 4;
+
+        log.debug("a/b = {}", a/b); // 取整
+        log.debug("a%b = {}", a%b); // 求余
+    }
 }

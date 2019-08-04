@@ -2,6 +2,7 @@ package com.coderandyli.annotation;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
@@ -110,33 +111,36 @@ public class MyAnnotationAspect {
      * @param myAnnotation
      * @return
      */
-//    @Around(value = "pointcut() && @annotation(myAnnotation)")
-//    public Object around(ProceedingJoinPoint point, MyAnnotation myAnnotation) {
-//        log.debug("++++++++++++++++++++ 环绕通知 ++++++++++++++++++++");
-//
-//        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-//        HttpServletRequest request = attributes.getRequest();
-//
-//        Class clazz = point.getTarget().getClass(); //拦截的类名
-//        Method method = ((MethodSignature) point.getSignature()).getMethod(); ////拦截的方法
-//        log.debug("MyAnnotation value = {}", myAnnotation.value());
-//        log.debug("执行了 类: {}, 方法：{}, 自定义请求地址: {} ", clazz, method, request.getRequestURL());
-//
-//        String methodName = point.getSignature().getName();
-//        Object result = null;
-//
-//
-//        try {
-//            log.debug("【环绕通知中的--->前置通知】");
-//            result = point.proceed(); //执行目标方法
-//            log.debug("【环绕通知中的--->返回通知】");
-//        } catch (Throwable throwable) {
-//            log.debug("【环绕通知中的--->异常通知");
-//            throwable.printStackTrace();
-//            return throwable.getMessage();
-//        }
-//        log.debug("【环绕通知中的--->后置通知");
-//        return result;
-//    }
+    @Around(value = "pointcut() && @annotation(myAnnotation)")
+    public Object around(ProceedingJoinPoint point, MyAnnotation myAnnotation) {
+        log.debug("++++++++++++++++++++ 环绕通知 ++++++++++++++++++++");
+
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        HttpServletRequest request = attributes.getRequest();
+
+        String servletPath = request.getServletPath();
+        log.debug("自定义请求路径 : {}", servletPath);
+
+        Class clazz = point.getTarget().getClass(); //拦截的类名
+        Method method = ((MethodSignature) point.getSignature()).getMethod(); ////拦截的方法
+        log.debug("MyAnnotation value = {}", myAnnotation.value());
+        log.debug("执行了 类: {}, 方法：{}, 自定义请求地址: {} ", clazz, method, request.getRequestURL());
+
+        String methodName = point.getSignature().getName();
+        Object result = null;
+
+
+        try {
+            log.debug("【环绕通知中的--->前置通知】");
+            result = point.proceed(); //执行目标方法
+            log.debug("【环绕通知中的--->返回通知】");
+        } catch (Throwable throwable) {
+            log.debug("【环绕通知中的--->异常通知");
+            throwable.printStackTrace();
+            return throwable.getMessage();
+        }
+        log.debug("【环绕通知中的--->后置通知");
+        return result;
+    }
 
 }
