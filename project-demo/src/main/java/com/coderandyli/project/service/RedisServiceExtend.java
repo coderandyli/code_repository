@@ -17,19 +17,17 @@ public class RedisServiceExtend {
     @Autowired
     RedisTemplate<String, String> redisTemplate;
 
-    public RedisTemplate<String, String> getRedisTemplate() {
-        return redisTemplate;
-    }
-
-    public void setRedisTemplate(RedisTemplate<String, String> redisTemplate) {
-        this.redisTemplate = redisTemplate;
-    }
-
-
     /**
+     * Executes the given action within a Redis connection. Application exceptions thrown by the action object get propagated to the caller (can only be unchecked)
+     * whenever possible. Redis exceptions are transformed into appropriate DAO ones. Allows for returning a result object, that is a domain object
+     * or a collection of domain objects. Performs automatic serialization/deserialization for the given objects to and from binary data suitable for the Redis storage.
+     * Note: Callback code is not supposed to handle transactions itself! Use an appropriate transaction manager. Generally,
+     * callback code must not touch any Connection lifecycle methods, like close, to let the template do its work.
+     *
      * 获取value
      * @param key
      * @return
+     *
      */
     public byte[] get(final String key){
         return redisTemplate.execute(new RedisCallback<byte[]>() {

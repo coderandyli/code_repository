@@ -32,6 +32,7 @@ public class RedisBitMapServiceImpl implements RedisBitMapService {
         return true;
     }
 
+
     @Override
     public String getSignIn() {
         byte[] bytes = redisServiceExtend.get(SIGN_UID_YEAR_KEY);
