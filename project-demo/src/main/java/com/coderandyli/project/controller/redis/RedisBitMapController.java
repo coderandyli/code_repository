@@ -1,4 +1,4 @@
-package com.coderandyli.project.controller;
+package com.coderandyli.project.controller.redis;
 
 import com.coderandyli.project.service.RedisBitMapService;
 import io.swagger.annotations.ApiOperation;

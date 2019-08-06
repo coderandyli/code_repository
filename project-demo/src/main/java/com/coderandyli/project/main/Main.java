@@ -1,5 +1,7 @@
 package com.coderandyli.project.main;
 
+import com.googlecode.javaewah.EWAHCompressedBitmap;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -12,8 +14,16 @@ import java.net.URL;
 public class Main {
 
     public static void main(String args[]) {
-        String widthAndHeight = getWidthAndHeight("http://192.168.30.103:8888/group1/M00/00/31/wKgeZ10cOZWAGeF6AANoTw82h08579.jpg");
-        System.out.println(widthAndHeight);
+//        String widthAndHeight = getWidthAndHeight("http://192.168.30.103:8888/group1/M00/00/31/wKgeZ10cOZWAGeF6AANoTw82h08579.jpg");
+//        System.out.println(widthAndHeight);
+
+        test01();
+    }
+
+    public static void test01(){
+        EWAHCompressedBitmap ewahBitmap1 = EWAHCompressedBitmap.bitmapOf(0, 2, 55, 64, 1 << 30);
+
+        System.out.println(ewahBitmap1);
     }
 
     /**
@@ -34,4 +44,7 @@ public class Main {
         }
         return "";
     }
+
+
+
 }
