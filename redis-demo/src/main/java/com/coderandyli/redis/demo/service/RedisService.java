@@ -19,6 +19,12 @@ public class RedisService {
     private RedisTemplate redisTemplate;
 
     /**
+     * =============================================================================
+     * =========          String             =========
+     * =============================================================================
+     */
+
+    /**
      * 写入缓存
      *
      * @param key
@@ -114,6 +120,22 @@ public class RedisService {
     }
 
     /**
+     * 自增
+     * @param key
+     * @return
+     */
+    public Long increment(String key) {
+        ValueOperations<Serializable, Object> operations = redisTemplate.opsForValue();
+        return operations.increment(key);
+    }
+
+    /**
+     * =============================================================================
+     * =========          HASH             =========
+     * =============================================================================
+     */
+
+    /**
      * 哈希 添加
      *
      * @param key
@@ -132,10 +154,21 @@ public class RedisService {
      * @param hashKey
      * @return
      */
-    public Object hmGet(String key, Object hashKey) {
-        HashOperations<String, Object, Object> hash = redisTemplate.opsForHash();
+    public String hmGet(String key, String hashKey) {
+        HashOperations<String, String, String> hash = redisTemplate.opsForHash();
         return hash.get(key, hashKey);
     }
+
+    public Boolean hHasKey(String key, Object hashKey) {
+        HashOperations<String, Object, Object> hash = redisTemplate.opsForHash();
+        return hash.hasKey(key, hashKey);
+    }
+
+    /**
+     * =============================================================================
+     * =========          list             =========
+     * =============================================================================
+     */
 
     /**
      * 列表添加
@@ -183,6 +216,13 @@ public class RedisService {
         return set.members(key);
     }
 
+
+    /**
+     * =============================================================================
+     * =========          zSet             =========
+     * =============================================================================
+     */
+
     /**
      * 有序集合添加
      *
@@ -220,7 +260,8 @@ public class RedisService {
     }
 
     /**
-     * 获取有序集合中指定成员的索引
+     * 获取有序集合中指定成员的索引（排名）
+     *
      * @param key
      * @param value
      * @return
@@ -230,8 +271,66 @@ public class RedisService {
         return zset.rank(key, value);
     }
 
-    public Long zRemove(String key, Object... value){
+    public Long zRemove(String key, Object... value) {
         ZSetOperations<String, Object> zset = redisTemplate.opsForZSet();
         return zset.remove(key, value);
     }
+
+    /**
+     * 根据score 低 -> 高
+     *
+     * @param key
+     * @param var1
+     * @param var2
+     * @return
+     */
+    public Set<Object> range(String key, Long var1, Long var2) {
+        ZSetOperations<String, Object> zset = redisTemplate.opsForZSet();
+        return zset.range(key, var1, var2);
+    }
+
+    /**
+     * 根据score 高 -> 低
+     *
+     * @param key
+     * @param var1
+     * @param var2
+     * @return
+     */
+    public Set<Object> reverseRange(String key, Long var1, Long var2) {
+        ZSetOperations<String, Object> zset = redisTemplate.opsForZSet();
+        return zset.reverseRange(key, var1, var2);
+    }
+
+
+    public Set<ZSetOperations.TypedTuple<String>> reverseRangeWithScores(String key, Long var1, Long var2) {
+        ZSetOperations<String, String> zset = redisTemplate.opsForZSet();
+        return zset.reverseRangeWithScores(key, var1, var2);
+    }
+
+    /***
+     * score增量
+     * @param key
+     * @param value
+     * @param score
+     * @return
+     */
+    public Double incrementScore(String key, String value, double score) {
+        ZSetOperations<String, Object> zset = redisTemplate.opsForZSet();
+        return zset.incrementScore(key, value, score);
+    }
+
+    /**
+     * 获取score
+     *
+     * @param key
+     * @param value
+     * @return
+     */
+    public Double score(String key, String value) {
+        ZSetOperations<String, Object> zset = redisTemplate.opsForZSet();
+        return zset.score(key, value);
+    }
+
+
 }

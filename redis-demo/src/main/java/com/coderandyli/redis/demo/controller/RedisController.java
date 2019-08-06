@@ -6,9 +6,9 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -26,8 +26,8 @@ public class RedisController {
 
     @ApiOperation(value = "注解Cacheable测试", notes = "", position = 1)
     @Cacheable(key = "#key")
-    @PostMapping("/cacheable-test/{key}")
-    public String cacheableTest(@PathVariable String key) {
+    @PostMapping("/cacheable-test")
+    public String cacheableTest(@RequestParam String key) {
         System.out.println("into method 【cacheableTest】");
         return "hello";
     }

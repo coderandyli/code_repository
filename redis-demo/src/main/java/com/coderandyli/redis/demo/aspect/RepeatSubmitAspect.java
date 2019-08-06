@@ -58,7 +58,10 @@ public class RepeatSubmitAspect {
             } catch (Throwable throwable) {
                 throwable.printStackTrace();
             } finally {
-//                redisLock.unloack(key, value);
+                Boolean unloack = redisLock.unloack(key, value);
+                if (!unloack) {
+                    log.error("【Redis分布式锁】解锁异常");
+                }
             }
             return result;
         } else {

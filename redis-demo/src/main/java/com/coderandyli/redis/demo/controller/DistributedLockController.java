@@ -20,13 +20,6 @@ public class DistributedLockController {
     @ApiOperation(value = "注解测试", notes = "", position = 1)
     @GetMapping("/test")
     public String test() {
-
-//        try {
-//            Thread.sleep(5000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-
         return "success";
     }
 }
