@@ -29,6 +29,15 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.addthis/stream-lib -->
+        <dependency>
+            <groupId>com.addthis</groupId>
+            <artifactId>stream-lib</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
