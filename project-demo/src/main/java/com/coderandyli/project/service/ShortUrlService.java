@@ -5,7 +5,7 @@ package com.coderandyli.project.service;
  */
 public interface ShortUrlService {
 
-    String generator(String originalUrl, String customUrl);
+    String generator(String originalUrl);
 
     String selectShortUrl(String originalUrl);
 }

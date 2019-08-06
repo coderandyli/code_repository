@@ -6,7 +6,7 @@ import com.coderandyli.project.mapper.LinkMapper;
 import com.coderandyli.project.service.RedisService;
 import com.coderandyli.project.service.ShortUrlService;
 import com.coderandyli.project.utils.EncodeTenToSixtyFour;
-import org.apache.commons.lang3.StringUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,7 @@ import java.util.Date;
 /**
  * Created by lizhen on 2019-07-29
  */
+@Slf4j
 @Service
 public class ShortUrlServiceImpl implements ShortUrlService {
 
@@ -31,42 +32,26 @@ public class ShortUrlServiceImpl implements ShortUrlService {
     private RedisService redisService;
 
     @Override
-    public String generator(String originalUrl, String customUrl) {
+    public String generator(String originalUrl) {
         String shortUrl;
-        boolean isSystemUrl = StringUtils.isBlank(customUrl);
 
-
-
-        Integer integer = linkMapper.isExistOriginalUrl(originalUrl);
-        if (integer != null && integer == 1) { // 已存在
+        // 使用Bloom Filter判断是否url是否已经生成过
+        Boolean exists = redisService.bloomFilterExists(originalUrl);
+        if (exists) {
             shortUrl = linkMapper.selectShortUrlByOriginalUrl(originalUrl);
+            log.info("url已有短码");
             return spliceShortUrl(shortUrl);
         }
 
-        if (isSystemUrl) { // 系统生成
-            Long id = redisService.increment(SHORT_URL_INCR_KEY);
-            shortUrl = EncodeTenToSixtyFour.encode(id);
+        Long id = redisService.increment(SHORT_URL_INCR_KEY);
+        shortUrl = EncodeTenToSixtyFour.encode(id);
 
-            // when shortUrl exist
-            Integer existShortUrl = linkMapper.isExistShortUrl(shortUrl);
-            if (existShortUrl != null && existShortUrl == 1) {
-                Long customId = linkMapper.selectIdByType(LinkEnum.custom);
-                shortUrl = EncodeTenToSixtyFour.encode(customId);
+        Link link = new Link(id, originalUrl, shortUrl, LinkEnum.system, new Date(), new Date(), false);
+        linkMapper.insert(link);
+        // 插入bloom filter
+        redisService.bloomFilterAdd(originalUrl);
 
-                Link link = new Link();
-                link.setId(customId);
-                link.setIdUsed(true);
-                linkMapper.updateById(link);
-            }
-
-            Link link = new Link(id, originalUrl, shortUrl, LinkEnum.system, new Date(), new Date(), false);
-            linkMapper.insert(link);
-            return spliceShortUrl(shortUrl);
-        } else { // 自定义短url
-            //todo 自定义短url未实现
-
-        }
-        return null;
+        return spliceShortUrl(shortUrl);
     }
 
     @Override

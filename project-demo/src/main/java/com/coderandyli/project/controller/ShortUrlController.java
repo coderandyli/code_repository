@@ -24,16 +24,15 @@ public class ShortUrlController {
     @Autowired
     private LinkMapper linkMapper;
 
-
     @ApiOperation(value = "生成短链接", notes = "", position = 1)
     @GetMapping("/generator")
-    public String generator(@RequestParam("originalUrl") String originalUrl, @RequestParam("customUrl") String customUrl) {
+    public String generator(@RequestParam("originalUrl") String originalUrl) {
         if (!ValidateUtils.checkURL(originalUrl)){
             //todo 网址不合法
             return "网址不合法, 请重新输入";
         }
 
-        return shortUrlService.generator(originalUrl, customUrl);
+        return shortUrlService.generator(originalUrl);
     }
 
     @GetMapping("/{shortUrl}")
@@ -41,6 +40,5 @@ public class ShortUrlController {
         response.addHeader("location", shortUrlService.selectShortUrl(shortUrl));
         response.setStatus(302);
     }
-
 
 }

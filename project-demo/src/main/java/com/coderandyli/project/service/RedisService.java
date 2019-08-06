@@ -1,10 +1,15 @@
 package com.coderandyli.project.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.core.*;
+import org.springframework.data.redis.core.script.DefaultRedisScript;
+import org.springframework.scripting.support.ResourceScriptSource;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -15,8 +20,25 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class RedisService {
 
+    private static final String ORIGINALURL_KEY = "originalUrl";
+
     @Autowired
     private RedisTemplate redisTemplate;
+
+    private DefaultRedisScript<Boolean> bloomAdd;
+
+    private DefaultRedisScript<Boolean> bloomExists;
+
+    @PostConstruct
+    public void init() {
+        bloomAdd = new DefaultRedisScript();
+        bloomAdd.setResultType(Boolean.class);
+        bloomAdd.setScriptSource(new ResourceScriptSource(new ClassPathResource("lua/bloomFilterAdd.lua")));
+
+        bloomExists = new DefaultRedisScript();
+        bloomExists.setResultType(Boolean.class);
+        bloomExists.setScriptSource(new ResourceScriptSource(new ClassPathResource("lua/bloomFilterExist.lua")));
+    }
 
     /**
      * =============================================================================
@@ -365,6 +387,37 @@ public class RedisService {
     public Double score(String key, String value) {
         ZSetOperations<String, Object> zset = redisTemplate.opsForZSet();
         return zset.score(key, value);
+    }
+
+    /**
+     * =============================================================================
+     * =========          Bloom filter             =========
+     * =============================================================================
+     */
+    /**
+     * 添加
+     * @param value
+     * @return
+     */
+    public Boolean bloomFilterAdd(String value){
+        List<Object> keys= new ArrayList<>();
+        keys.add(ORIGINALURL_KEY);
+        keys.add(value);
+        Boolean result = (Boolean) redisTemplate.execute(bloomAdd,keys);
+        return result;
+    }
+
+    /**
+     * I
+     * @param value
+     * @return
+     */
+    public Boolean bloomFilterExists(String value){
+        List<Object> keys= new ArrayList<>();
+        keys.add(ORIGINALURL_KEY);
+        keys.add(value+"");
+        Boolean result = (Boolean) redisTemplate.execute(bloomExists,keys);
+        return result;
     }
 
 }
