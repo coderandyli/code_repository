@@ -16,7 +16,6 @@ public class Main {
         System.out.println(widthAndHeight);
     }
 
-
     /**
      * 获取网络图片的宽和高
      * @param url

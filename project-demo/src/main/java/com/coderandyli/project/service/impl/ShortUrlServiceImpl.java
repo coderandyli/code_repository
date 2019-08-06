@@ -35,6 +35,8 @@ public class ShortUrlServiceImpl implements ShortUrlService {
         String shortUrl;
         boolean isSystemUrl = StringUtils.isBlank(customUrl);
 
+
+
         Integer integer = linkMapper.isExistOriginalUrl(originalUrl);
         if (integer != null && integer == 1) { // 已存在
             shortUrl = linkMapper.selectShortUrlByOriginalUrl(originalUrl);
