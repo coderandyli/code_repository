@@ -3,6 +3,7 @@ server:
 spring:
   application:
     name: redis-demo
+r
 #  redis:
 #    sentinel:
 #      master: mymaster

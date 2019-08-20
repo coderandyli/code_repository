@@ -12,9 +12,9 @@ import java.net.URL;
 public class Main {
 
     public static void main(String args[]) {
-//        String widthAndHeight = getWidthAndHeight("http://192.168.30.103:8888/group1/M00/00/31/wKgeZ10cOZWAGeF6AANoTw82h08579.jpg");
-//        System.out.println(widthAndHeight);
-        test01();
+        String widthAndHeight = getWidthAndHeight("http://storage.e-ports.com/group1/M00/00/3B/wKgeZ11aN_iACzg1AAVYRSn_sQ0344.jpg");
+        System.out.println(widthAndHeight);
+        //test01();
     }
 
     public static void test01() {

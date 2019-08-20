@@ -10,6 +10,8 @@ package com.coderandyli.algo.BitMap;
  *
  * 问题
  *  1、涉及到位运算为什么会使用16进制呢?
+ *      1.1、 涉及到位运算必然要使用二进制， 16进制比较转换成二进制（1个16进制可以表示4个二进制），同时可以很直观的看到结果
+ *
  *  https://blog.csdn.net/zhongdong00/article/details/83049053
  *
  */
@@ -18,7 +20,6 @@ public class BitMap {
     private final static int ADDRESS_BITS_PER_WORD = 5;  // 5
     private final static int BITS_PER_WORD = 1 << ADDRESS_BITS_PER_WORD; //  32
     private final static int BIT_INDEX_MASK = BITS_PER_WORD - 1; // 31
-
 
     private static int getWordIndex(int bitIndex) {
         return bitIndex >> ADDRESS_BITS_PER_WORD;

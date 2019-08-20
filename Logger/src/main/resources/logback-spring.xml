@@ -31,7 +31,8 @@
         </layout>
         <!-- 滚动策略 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/Users/lizhen/test_file/LoggerTest/log/info.%d.log</fileNamePattern>
+            <!--<fileNamePattern>/Users/lizhen/test_file/LoggerTest/log/info.%d.log</fileNamePattern>-->
+            <fileNamePattern>logs/info.%d.log</fileNamePattern>
         </rollingPolicy>
     </appender>
 
@@ -47,7 +48,8 @@
         </layout>
         <!-- 滚动策略 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/Users/lizhen/test_file/LoggerTest/log/error.%d.log</fileNamePattern>
+            <!--<fileNamePattern>/Users/lizhen/test_file/LoggerTest/log/error.%d.log</fileNamePattern>-->
+            <fileNamePattern>logs/error.%d.log</fileNamePattern>
         </rollingPolicy>
     </appender>
 

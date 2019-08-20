@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * Created by lizhen on 2019-08-17
  * <p>
- * 跨域问题
+ * CORS跨源资源共享
  */
 @Configuration
 public class CORSConfig {
@@ -26,6 +26,4 @@ public class CORSConfig {
             }
         };
     }
-
-
 }
