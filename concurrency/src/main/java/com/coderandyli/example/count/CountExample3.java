@@ -13,7 +13,7 @@ import java.util.concurrent.Semaphore;
 public class CountExample3 {
 
     // 请求总数
-    public static int clientTotal = 5000;
+    public static int clientTotal = 500000;
 
     // 同时并发执行的线程数
     public static int threadTotal = 200;
@@ -21,6 +21,8 @@ public class CountExample3 {
     public static int count = 0;
 
     public static void main(String[] args) throws Exception {
+        long startTime = System.currentTimeMillis();
+
         ExecutorService executorService = Executors.newCachedThreadPool();
         final Semaphore semaphore = new Semaphore(threadTotal);
         final CountDownLatch countDownLatch = new CountDownLatch(clientTotal);
@@ -38,6 +40,10 @@ public class CountExample3 {
         }
         countDownLatch.await();
         executorService.shutdown();
+        long endTime = System.currentTimeMillis();
+
+
+        log.info("exec time = {}", endTime - startTime);
         log.info("count:{}", count);
     }
 
