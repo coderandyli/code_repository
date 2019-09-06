@@ -1,0 +1,61 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: ad-ws-job
+  elasticjob:
+    # 分布式任务协调依赖zookeeper
+    zookeeper:
+      server-lists: 192.168.30.12:2181
+      namespace: elastic-job-demo
+    # 普通任务
+#    simples:
+#      myjob:
+#        job-class: com.coderandyli.elasticjob.demo.job.LzSimpleJob
+#        cron: 20 * * * * ?
+#        sharding-total-count: 2
+#        sharding-item-parameters: 0=service1,1=service2,2=service3
+#        eventTraceRdbDataSource: 'dataSource'
+#        listener:
+#          listener-class: com.coderandyli.elasticjob.demo.listener.LzElasticJobListener
+
+    # 流式任务
+    dataflows:
+      spring-dataflow-job:
+        job-class: com.coderandyli.elasticjob.demo.job.LzDataflowJob
+        cron: 0/10 * * * * ?
+        sharding-total-count: 3
+        sharding-item-parameters: 0=Beijing,1=Shanghai,2=Guangzhou
+        # 是否流式处理数据：
+        streaming-process: true
+        eventTraceRdbDataSource: 'dataSource'
+        listener:
+          distributed-listener-class: com.coderandyli.elasticjob.demo.listener.LzDistributeElasticJobListener
+          started-timeout-milliseconds: 5000
+          completed-timeout-milliseconds: 10000
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.30.13:3306/eports_develop?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=GMT%2B8
+# 注册中心配置
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    service-url:
+#      defaultZone: http://ad:ad@192.168.30.98:10025/eureka/
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+feign:
+  hystrix:
+    enabled: false
+
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
