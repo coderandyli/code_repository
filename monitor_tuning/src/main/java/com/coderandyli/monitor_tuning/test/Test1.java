@@ -1,4 +1,4 @@
-package com.coderandyli.monitor_tuning;
+package com.coderandyli.monitor_tuning.test;
 
 /**
  * Created by lizhen on 2019-09-24
@@ -7,7 +7,7 @@ package com.coderandyli.monitor_tuning;
  *
  *
  * {
- *   public com.coderandyli.monitor_tuning.Test1();
+ *   public com.coderandyli.monitor_tuning.test.Test1();
  *     descriptor: ()V
  *     flags: ACC_PUBLIC
  *     Code:
