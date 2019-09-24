@@ -24,10 +24,22 @@ public class MemoryController {
      * 堆内存溢出
      *
      * 运行参数:
-     *      -Xmx32M -Xms32M
+     *
+     * # 栈初始大小: 32M
+     * -Xms32M
+     * # 栈最大内存 32M
+     * -Xmx32M
+     * # JVM内存溢出时，自动生成快照
+     * -XX:+HeapDumpOnOutOfMemoryError
+     * # 内存溢出时，快照生成的路径
+     * -XX:HeapDumpPath=/Users/lizhen/Desktop/heapdump.hprof
+     *
+     * -Xmx32M -Xms32M -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/Users/lizhen/Desktop/heapdump.hprof
      *
      * 运行结果：
      *      java.lang.OutOfMemoryError: GC overhead limit exceeded
+     *
+     *
      */
     @GetMapping("/heap")
     public void heap(){
@@ -37,10 +49,10 @@ public class MemoryController {
     }
 
     /**
-     * 非堆内存溢出
+     * 非堆内存溢出（元空间 Matespace）
      *
      * 运行参数
-     *      -XX:MetaspaceSize=32M -XX:MaxMetaspaceSize=32M
+     *      -XX:MetaspaceSize=32M -XX:MaxMetaspaceSize=32M -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/Users/lizhen/Desktop/heapdump.hprof
      * 运行结果
      *      Exception in thread "main" java.lang.OutOfMemoryError: Metaspace
      */
