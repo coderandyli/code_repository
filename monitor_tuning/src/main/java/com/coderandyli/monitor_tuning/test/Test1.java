@@ -2,8 +2,14 @@ package com.coderandyli.monitor_tuning.test;
 
 /**
  * Created by lizhen on 2019-09-24
+ * ====================  反编译生成字节码信息=====================
  *
- * ====================  字节码 =====================
+ * javac Test1.java
+ *
+ * javap -v Main.class
+ *
+ *
+ * ====================  字节码信息=====================
  *
  *
  * {
@@ -32,9 +38,9 @@ package com.coderandyli.monitor_tuning.test;
  *     flags: ACC_PUBLIC
  *     Code:
  *       stack=2, locals=4, args_size=1 // 最大栈深度为2；局部变量个数为4
- *          0: bipush        13         // 常量13压入栈
+ *          0: bipush        13         // 常量13压入操作栈
  *          2: istore_1                 // 并保存到局部变量表的slot_1中（第1处）
- *          3: bipush        14         // 常量14压入栈
+ *          3: bipush        14         // 常量14压入操作栈
  *          5: istore_2                 // 并保存到局部变量表的slot_2中
  *          6: iload_1                  // 把局部变量表的slot_1元素(int x)压入操作栈
  *          7: iload_2                  // 把局部变量表的slot_2元素(int y)压入操作栈
@@ -48,6 +54,11 @@ package com.coderandyli.monitor_tuning.test;
  *         line 15: 6
  *         line 17: 10
  * }
+ *
+ * ====================  分析  =====================
+ *
+ *
+ *
  *
  */
 public class Test1 {
