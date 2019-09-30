@@ -25,6 +25,8 @@ public class MemoryController {
      *
      * 运行参数:
      *
+     * jdk版本： 1.8
+     *
      * # 栈初始大小: 32M
      * -Xms32M
      * # 栈最大内存 32M
@@ -49,15 +51,32 @@ public class MemoryController {
     }
 
     /**
-     * 非堆内存溢出（元空间 Matespace）
+     * OOM非堆内存溢出（元空间 Matespace）
+     *
+     * 运行环境
+     * jdk8
      *
      * 运行参数
      *      -XX:MetaspaceSize=32M -XX:MaxMetaspaceSize=32M -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/Users/lizhen/Desktop/heapdump.hprof
      * 运行结果
      *      Exception in thread "main" java.lang.OutOfMemoryError: Metaspace
      */
-    @GetMapping("/nonheap")
-    public void nonheap(){
+    @GetMapping("/jdk8/nonheap")
+    public void nonheapForJdk8(){
+        while (true){
+            classList.addAll(Metaspace.createClasses());
+        }
+    }
+
+    /**
+     * 运行环境
+     * jdk7
+     *
+     * 运行参数
+     *  -XX:PermSize=32M -XX:MaxPermSize=32M
+     */
+    @GetMapping("/jdk7/nonheap")
+    public void nonheapForJdk7(){
         while (true){
             classList.addAll(Metaspace.createClasses());
         }
