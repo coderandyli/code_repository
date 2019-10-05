@@ -28,7 +28,7 @@ import java.util.List;
 public class Test4 {
 
     public static void main(String args[]) {
-        List<Class<?>> classList = new ArrayList<>();
+        List<Class<?>> classList = new ArrayList<Class<?>>();
         while (true) {
             classList.addAll(Metaspace.createClasses());
         }

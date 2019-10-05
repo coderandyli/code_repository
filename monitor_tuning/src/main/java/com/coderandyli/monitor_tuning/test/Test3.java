@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by lizhen on 2019-09-30
  *
- *   字符串池和类的静态变量存放位置测试
+ *   字符串常量池和类的静态变量存放位置测试
  * <p>
  * jdk1.7，类的静态变量转移到了java heap中
  * <p>
@@ -20,7 +20,7 @@ import java.util.List;
  * 运行结果
  * java.lang.OutOfMemoryError: PermGen space
  * 结论
- * 字符串常量存放在永久代中
+ * 字符串常量池 存放在永久代中
  * <p>
  * ================= jdk1.7 =================
  * <p>
@@ -30,7 +30,7 @@ import java.util.List;
  * 运行结果
  * java.lang.OutOfMemoryError: Java heap space
  * 结论
- * 字符串常量在堆（java heap）中
+ * 字符串常量池 在堆（java heap）中
  * <p>
  * ================= jdk1.8 =================
  * 运行参数
