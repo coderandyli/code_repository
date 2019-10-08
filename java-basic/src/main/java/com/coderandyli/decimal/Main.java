@@ -50,7 +50,7 @@ public class Main {
     @Test
     public void test02() {
         float f1 = 3.31f;
-        float f2 = 2.2f;
+        float f2 = 0f; //2.2f;
 
         BigDecimal b1 = new BigDecimal(Float.toString(f1));
         BigDecimal b2 = new BigDecimal(Float.toString(f2));
@@ -62,13 +62,15 @@ public class Main {
         log.info("b1.subtract(b2).toString() = {}", b1.subtract(b2).toString());
 
         // 乘
-        log.info("b1.multiply(b2).toString() = {}", b1.multiply(b2).toString());
+        log.info("b1.multiply(b2).toString() = {}", b1.multiply(b2).doubleValue());
 
         log.info("--------------------------------------");
 
         // 除
         // BigDecimal.ROUND_HALF_DOWN 四舍五入
-        BigDecimal divide = b1.divide(b2, 20, BigDecimal.ROUND_HALF_DOWN);
+        BigDecimal divide = b1.divide(b2, 2, BigDecimal.ROUND_HALF_DOWN);
+
+
         log.info("divide.intValue() = {}", divide.intValue());
         log.info("divide.longValue() = {}", divide.longValue());
         log.info("divide.floatValue() = {}", divide.floatValue());
