@@ -20,32 +20,9 @@
 
 /**
  * 解题思路：使用贪心算法的思想
- * <p>
+ *
  * “贪心地”、“尽可能多”地分解出 3 正整这个加法因子，就能够使得最终的乘积得到最大。
  */
-//class Solution {
-//    public int integerBreak(int n) {
-//        if (n <= 2) {
-//            return 1;
-//        }
-//        if (n == 3) {
-//            return 2;
-//        }
-//        if (n == 4) {
-//            return 4;
-//        }
-//        // 接下来就是 n >= 5 的时候的逻辑了
-//        int res = 1;
-//        while (n > 4) {
-//            res *= 3;
-//            n -= 3;
-//        }
-//        res *= n;
-//        return res;
-//    }
-//}
-
-
 class Solution {
     public int integerBreak(int n) {
         if (n <= 2) {
@@ -57,8 +34,9 @@ class Solution {
         if (n == 4) {
             return 4;
         }
+        // 接下来就是 n >= 5 的时候的逻辑了
         int res = 1;
-        while (n >= 5) {
+        while (n > 4) {
             res *= 3;
             n -= 3;
         }
