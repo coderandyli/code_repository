@@ -1,6 +1,9 @@
 package com.coderandyli.staticAndfinal;
 
+import java.util.Date;
 import java.util.Random;
+import java.util.TimeZone;
+
 /**
  * Created by lizhen on 2019-10-08
  *
@@ -39,6 +42,14 @@ public class StaticAndFinalTest {
     private static final int B = rand.nextInt(20);
 
     public static void main(String[] args) {
+
+        TimeZone aDefault = TimeZone.getDefault();
+        System.out.println(aDefault);
+        System.out.println(new Date());
+
+        System.out.println(System.currentTimeMillis());
+
+
         StaticAndFinalTest sf = new StaticAndFinalTest();
         System.out.println("sf : " + "a=" + sf.a);
         System.out.println("sf : " + "B=" + sf.B);
