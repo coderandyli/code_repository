@@ -9,11 +9,13 @@ import java.lang.reflect.Method;
 
 /**
  * Created by lizhen on 2019-10-29
+ *
+ * Java的反射就是利用加载到jvm中的.class文件(字节码文件)来进行操作的。.class文件中包含java类的所有信息，当你不知道某个类具体信息时，可以使用反射获取class，然后进行各种操作。
+ * Java反射就是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性；并且能改变它的属性。
+ * 总结说：反射就是把java类中的各种成分映射成一个个的Java对象，并且可以进行操作。
  */
 @Slf4j
 public class ReflectClass {
-    private final static String TAG = "peter.log.ReflectClass";
-
     private static Class<?> classBook = null;
     static {
         try {
