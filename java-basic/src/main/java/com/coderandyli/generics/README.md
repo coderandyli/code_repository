@@ -5,8 +5,8 @@
 ## 类型擦除 Type Erasure
  - 发生在编译器
  - 编译期提供类型检查以及消除类型转换： 
- - 这也正是泛型的好处之一，可以提前暴露问题，而不是等到运行时出现ClassCastException。编译器会在编译时对泛型类型进行检测，并把它重写成实际的对象类型(非泛型代码)，这样就可以被JVM执行了。这个过程被称为"类型擦除"。
- - eg: 编译 javac BoundedTypeParametersTest.java查看
+    - 这也正是泛型的好处之一，可以提前暴露问题，而不是等到运行时出现ClassCastException。编译器会在编译时对泛型类型进行检测，并把它重写成实际的对象类型(非泛型代码)，这样就可以被JVM执行了。这个过程被称为"类型擦除"。
+    - eg: 编译 javac BoundedTypeParametersTest.java查看
 
 
 ## Java泛型中的标记符含义（可以使用任意大写字母替换） 
