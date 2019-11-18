@@ -25,13 +25,13 @@ public class Test {
         };
 
         // 1.1 根据首字母 正序
-        // Arrays.sort(names, (String o1, String o2) -> o1.compareTo(o2));
+//         Arrays.sort(names, (String o1, String o2) -> o1.compareTo(o2));
 
         // 1.2 根据首字母 逆序
         // Arrays.sort(names, (String o1, String o2) -> o2.compareTo(o1));
 
         // 2.1 根据尾字母 正序
-        // Arrays.sort(names, (String o1, String o2) -> o1.substring(o1.length() - 1).compareTo(o2.substring(o2.length() - 1)));
+         Arrays.sort(names, (String o1, String o2) -> o1.substring(o1.length() - 1).compareTo(o2.substring(o2.length() - 1)));
 
         // 2.2 根据尾字母 逆序
         Arrays.sort(names, (String o1, String o2) -> o2.substring(o2.length() - 1).compareTo(o1.substring(o1.length() - 1)));
@@ -56,7 +56,6 @@ public class Test {
                 add(new Test.User(5, "eee"));
             }
         };
-
 
         // 1.1 根据id排序 正序 （内部类实现）
         Collections.sort(users, test.new CompareIds(true));
@@ -219,12 +218,13 @@ public class Test {
             int id1 = asced ? u1.getId() : u2.getId();
             int id2 = asced ? u2.getId() : u1.getId();
 
-            if (id1 > id2)
+            if (id1 > id2){
                 return 1;
-            else if (id1 == id2)
+            } else if (id1 == id2){
                 return 0;
-            else
+            } else {
                 return -1;
+            }
         }
     }
 

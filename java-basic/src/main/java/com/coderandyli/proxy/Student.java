@@ -1,5 +1,6 @@
-package com.coderandyli.proxy.staticProxy;
+package com.coderandyli.proxy;
 
+import com.coderandyli.proxy.Behavior;
 import lombok.extern.slf4j.Slf4j;
 
 /**

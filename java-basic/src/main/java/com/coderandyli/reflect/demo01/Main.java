@@ -17,7 +17,9 @@ public class Main {
         test();
     }
 
-
+    /**
+     * 枚举使用反射
+     */
     public static void test() {
         Map<String, String> enumMap = new HashMap<>();
         enumMap.put("UserType", "0");

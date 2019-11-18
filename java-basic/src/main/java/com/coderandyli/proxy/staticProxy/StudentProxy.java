@@ -1,10 +1,12 @@
 package com.coderandyli.proxy.staticProxy;
 
+import com.coderandyli.proxy.Behavior;
+import com.coderandyli.proxy.Student;
 import lombok.extern.slf4j.Slf4j;
 
 /**
  * Created by lizhen on 2019-11-07
- *
+ * <p>
  * 代理对象对，原有对象代码增强
  */
 @Slf4j
@@ -24,8 +26,8 @@ public class StudentProxy implements Behavior {
 
     @Override
     public void say(String str) {
-        log.debug("proxy say before");
+        log.debug("proxy say before...");
         behavior.say(str);
-        log.debug("proxy say after");
+        log.debug("proxy say after...");
     }
 }
