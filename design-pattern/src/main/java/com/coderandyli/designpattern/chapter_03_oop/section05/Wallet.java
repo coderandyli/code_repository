@@ -7,8 +7,16 @@ import java.math.BigDecimal;
 
 /**
  * Created by lizhen on 2019-11-18
+ *
+ * 抽象示例
+ *  从业务角度触发，基于访问权限，只对外暴露少许必要的方法，供调用者调用
+ *      - getId
+ *      - getCreateTime
+ *      - getBalance
+ *      - getBalanceLastModifiedTime
+ *      - increaseBalance
+ *      - decreaseBalance
  */
-
 public class Wallet {
     private long id;
     private long createTime;
@@ -23,7 +31,6 @@ public class Wallet {
         this.balanceLastModifiedTime = System.currentTimeMillis();
     }
 
-    // 注意：下面对get方法做了代码折叠，是为了减少代码所占文章的篇幅
     public long getId() { return this.id; }
     public long getCreateTime() { return this.createTime; }
     public BigDecimal getBalance() { return this.balance; }

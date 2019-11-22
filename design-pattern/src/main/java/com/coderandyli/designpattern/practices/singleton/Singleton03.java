@@ -23,7 +23,7 @@ public class Singleton03 {
     private Singleton03() {
     }
 
-    public static synchronized Singleton03 getInstance() {
+    public static Singleton03 getInstance() {
         // 示例不存在，进入
         if (instance == null) {
             // 同步代码块，保证线程安全
@@ -36,5 +36,9 @@ public class Singleton03 {
             instance = new Singleton03();
         }
         return instance;
+    }
+
+    public static void main(String args[]) {
+        Singleton03 instance = Singleton03.getInstance();
     }
 }

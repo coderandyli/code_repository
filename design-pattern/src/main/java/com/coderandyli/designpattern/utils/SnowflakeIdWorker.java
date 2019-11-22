@@ -1,5 +1,6 @@
 package com.coderandyli.designpattern.utils;
 
+import com.coderandyli.designpattern.practices.singleton.Singleton01;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -91,11 +92,10 @@ public class SnowflakeIdWorker {
      */
     private long lastTimestamp = -1L;
 
-    private static SnowflakeIdWorker idWorker;
-
-    static {
-        idWorker = new SnowflakeIdWorker(getWorkId(), getDataCenterId());
-    }
+    /**
+     * 实例对象
+     */
+    private volatile static SnowflakeIdWorker instance;
 
     //==============================Constructors=====================================
 
@@ -212,29 +212,21 @@ public class SnowflakeIdWorker {
         }
     }
 
-
-    /**
-     * 静态工具类
-     *
-     * @return
-     */
     public Long generateId() {
-        long id = idWorker.nextId();
+        long id = instance.nextId();
         return id;
     }
 
-    private volatile static SnowflakeIdWorker instance;
-
-
     /**
      * 获取示例（ DCL模式）
+     *
      * @return
      */
     public static SnowflakeIdWorker getInstance() {
         if (instance == null) {
             synchronized (SnowflakeIdWorker.class) {
                 if (instance == null) {
-                    instance = new SnowflakeIdWorker();
+                    instance = new SnowflakeIdWorker(getWorkId(), getDataCenterId());
                 }
             }
         }
@@ -249,7 +241,7 @@ public class SnowflakeIdWorker {
     public static void main(String[] args) {
         System.out.println(System.currentTimeMillis());
         long startTime = System.nanoTime();
-        for (int i = 0; i < 130000; i++) {
+        for (int i = 0; i < 200000; i++) {
             long id = SnowflakeIdWorker.getInstance().generateId();
             System.out.println(id);
         }
