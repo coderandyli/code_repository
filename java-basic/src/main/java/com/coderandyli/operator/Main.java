@@ -2,6 +2,10 @@ package com.coderandyli.operator;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.junit.platform.commons.logging.Logger;
+import org.junit.platform.commons.logging.LoggerFactory;
+
+import java.util.HashMap;
 
 /**
  * Created by lizhen on 2019-04-07
@@ -20,22 +24,26 @@ import org.junit.Test;
 @Slf4j
 public class Main {
 
+    public static void main(String args[]) {
+        log.debug("{}", tableSizeFor(1000));
+    }
     /**
      * 移位运算符
      * <<  左移运算符
-     *
      */
     @Test
     public void test01() {
         int leftShift = 10;
-        System.out.println("十进制:" + leftShift + ", 二进制:" + Integer.toBinaryString(leftShift));
         int newLeftShift = leftShift << 3;
-        System.out.println("左移2位后十进制:" + newLeftShift + ", 左移2位后二进制" + Integer.toBinaryString(newLeftShift));    //正整数x左移n位后的十进制结果，x = x * 2^n
-        double pow = Math.pow(2, 3); // 2的2次方
-        System.out.println("leftShift左移2位 <==> leftShift * 2的2次方(2^2)，及" + leftShift * pow);
+        log.info("【十进制形式】：位移前：{}, 位移后：{}", leftShift, newLeftShift);
+        log.info("【二进制形式】：位移前：{}, 位移后：{}", Integer.toBinaryString(leftShift), Integer.toBinaryString(newLeftShift));
+        double pow = Math.pow(2, 3); // 2的3次方
+        log.info(" 10 * (2^3) = {}， 即：x << n 等价于 x * 2^n", leftShift * pow);
     }
 
     /**
+     * >>  右位移运算符 ： 有符号右移位，将运算数的二进制整体右移指定位数，整数高位用0补齐，负数高位用1补齐（保持负数符号不变）
+     *
      * 计算机中负数是补码表示的
      * 为什么会-10的二进制会出现这么多的1呢？仔细数一下刚好有32位。
      * 首先需要了解的是Java负数存储是以补码形式存储的（补码=反码+1），
@@ -43,14 +51,14 @@ public class Main {
      * 那为什么会多出来那么多1呢？这是因为int型在Java中占8个字节，
      * 刚好32位，10原码的高位全是0，它的反码自然高位就变成了1。
      * 所以整体左移2位，低位以0补齐，最后的运算结果就是x = (|x| + 2^n)。
-     *
-     * >>  右位移运算符 ： 有符号右移位，将运算数的二进制整体右移指定位数，整数高位用0补齐，负数高位用1补齐（保持负数符号不变）
      */
     @Test
     public void test02() {
-        log.debug("{}", Long.toBinaryString(-80L));
-        long l = -80L >> 3L; // -32
-        log.debug("右运算符 十进制 - 二进制 -> {} - {}", l, Long.toBinaryString(l));
+        int rightShift = -80; //
+        int newRightShift = -80 >> 3; // -32
+
+        log.info("【有符号右移十进制形式】：位移前：{},位移后：{}", rightShift, newRightShift);
+        log.info("【有符号右移二进制形式】：位移前：{},位移后：{}", Integer.toBinaryString(rightShift), Integer.toBinaryString(newRightShift));
     }
 
     /**
@@ -89,6 +97,19 @@ public class Main {
         int a = 9;
         int b = 12;
         log.debug("a | b = {}", Integer.toBinaryString(a | b));
+    }
+
+    static final int MAXIMUM_CAPACITY = 1 << 30;
+
+    @Test
+    public static final int tableSizeFor(int cap) {
+        int n = cap - 1;
+        n |= n >>> 1;
+        n |= n >>> 2;
+        n |= n >>> 4;
+        n |= n >>> 8;
+        n |= n >>> 16;
+        return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
     }
 
     /**
