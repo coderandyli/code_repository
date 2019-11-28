@@ -1,0 +1,16 @@
+server:
+  port: 10000
+spring:
+  application:
+    name: rabbitMqDemo
+  rabbitmq:
+    host: 192.168.30.12
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    publisher-confirms: true #开启发送确认
+    publisher-returns: true #开启发送失败退回
+    listener:
+      simple:
+        acknowledge-mode: manual #ack manual
