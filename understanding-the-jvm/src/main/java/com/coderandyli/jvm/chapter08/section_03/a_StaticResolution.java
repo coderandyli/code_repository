@@ -38,8 +38,6 @@ package com.coderandyli.jvm.chapter08.section_03;
  *         line 20: 0
  *         line 21: 3
  *
- *
- *
  */
 public class a_StaticResolution {
 
