@@ -24,7 +24,7 @@ public class Singleton03 {
     }
 
     public static Singleton03 getInstance() {
-        // 示例不存在，进入
+        // 实例不存在，进入
         if (instance == null) {
             // 同步代码块，保证线程安全
             synchronized (Singleton03.class) {

@@ -3,7 +3,7 @@ package com.coderandyli.designpattern.practices.singleton;
 /**
  * Created by lizhen on 2019-11-18
  *
- * 饱汉模式，线程不安全
+ * 饱汉模式，线程安全
  *  是否Lazy初始化：是
  *  是否多线程安全：是
  */

@@ -7,7 +7,7 @@ import com.coderandyli.designpattern.chapter_03_oop.section12.fixture.exception.
 import com.coderandyli.designpattern.chapter_03_oop.section12.fixture.repository.VirtualWalletRepository;
 import com.coderandyli.designpattern.chapter_03_oop.section12.fixture.repository.VirtualWalletTransactionRepository;
 import com.coderandyli.designpattern.chapter_03_oop.section12.fixture.enums.Status;
-import com.coderandyli.designpattern.chapter_03_oop.section12.mvc.service.VirtualWalletService;
+import com.coderandyli.designpattern.chapter_03_oop.section12.ddd.service.VirtualWalletService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
