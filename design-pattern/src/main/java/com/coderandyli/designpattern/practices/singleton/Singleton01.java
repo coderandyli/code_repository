@@ -17,10 +17,10 @@ public class Singleton01 {
         System.out.println("Singleton01");
     }
 
-//    public static Singleton01 getInstance(){
-//        if (instance == null){
-//            instance = new Singleton01();
-//        }
-//        return instance;
-//    }
+    public static Singleton01 getInstance(){
+        if (instance == null){
+            instance = new Singleton01();
+        }
+        return instance;
+    }
 }

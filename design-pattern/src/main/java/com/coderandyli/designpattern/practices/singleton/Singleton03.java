@@ -14,6 +14,8 @@ public class Singleton03 {
      *  1、保证可见性
      *  2、进制指令重排序，有序性
      *  3、只保证单次读/写的原子性
+     *  指令重排问题：
+     *        高版本的 Java 已经在 JDK 内部实现中解决了这个问题（解决的方法很简单，只要把对象 new 操作和初始化操作设计为原子操作，就自然能禁止重排序, 所以说可以不加 volatile 关键字
      */
     private volatile static Singleton03 instance;
 
