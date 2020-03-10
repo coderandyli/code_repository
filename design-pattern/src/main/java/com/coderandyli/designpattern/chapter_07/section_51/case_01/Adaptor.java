@@ -6,7 +6,6 @@ public class Adaptor extends Adaptee implements ITarget {
         //改造中逻辑
         super.fa();
         //改造中逻辑
-
     }
 
     @Override

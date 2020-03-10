@@ -1,4 +1,4 @@
-package com.coderandyli.designpattern.chapter_07.section_52.case_01;
+package com.coderandyli.designpattern.chapter_07.section_53.case_01;
 
 public class File extends FileSystemNode {
     public File(String path) {
@@ -17,3 +17,4 @@ public class File extends FileSystemNode {
         return file.length();
     }
 }
+

@@ -9,16 +9,28 @@ public class AlertRule {
         return new AlertRule();
     }
 
+    /**
+     * 允许tps最大请求时时间
+     * @return
+     */
     public long getMaxTps(){
-        return 0;
+        return 5;
     }
 
+    /**
+     * 允许最大报错数量
+     * @return
+     */
     public long getMaxErrorCount(){
-        return 0;
+        return 100;
     }
 
+    /**
+     * 允许tps最大超时时间
+     * @return
+     */
     public long getMaxTimeoutTps(){
-        return 0;
+        return 10;
     }
 
 }

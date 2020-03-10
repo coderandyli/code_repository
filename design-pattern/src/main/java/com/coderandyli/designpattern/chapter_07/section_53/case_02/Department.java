@@ -1,4 +1,4 @@
-package com.coderandyli.designpattern.chapter_07.section_52.case_02;
+package com.coderandyli.designpattern.chapter_07.section_53.case_02;
 
 import java.util.ArrayList;
 import java.util.List;

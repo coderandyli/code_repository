@@ -1,4 +1,4 @@
-package com.coderandyli.designpattern.chapter_07.section_52.case_02;
+package com.coderandyli.designpattern.chapter_07.section_53.case_02;
 
 // 构建组织架构的代码
 public class Demo {
@@ -6,10 +6,10 @@ public class Demo {
     // private DepartmentRepo departmentRepo; // 依赖注入
     // private EmployeeRepo employeeRepo; // 依赖注入
 
-    public void buildOrganization() {
-        Department rootDepartment = new Department(ORGANIZATION_ROOT_ID);
-        buildOrganization(rootDepartment);
-    }
+//    public void buildOrganization() {
+//        Department rootDepartment = new Department(ORGANIZATION_ROOT_ID);
+//        buildOrganization(rootDepartment);
+//    }
 
 //    private void buildOrganization(Department department) {
 //        List<Long> subDepartmentIds = departmentRepo.getSubDepartmentIds(department.getId());
