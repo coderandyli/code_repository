@@ -6,8 +6,9 @@ import com.coderandyli.designpattern.practices.alert.notification.Notification;
 
 /**
  * Created by lizhen on 2019-12-14
+ *
+ * Error 警告处理类
  */
-
 public class ErrorAlertHandler extends AlertHandler {
     public ErrorAlertHandler(AlertRule rule, Notification notification){
         super(rule, notification);

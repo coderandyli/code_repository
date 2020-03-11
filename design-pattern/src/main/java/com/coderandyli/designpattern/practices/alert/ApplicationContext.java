@@ -21,14 +21,13 @@ public class ApplicationContext {
     private Alert alert;
 
     public void initializeBeans() {
-        alertRule = new AlertRule(/*.省略参数.*/); //省略一些初始化代码
+        alertRule = new AlertRule();
+
+        // 采用桥接模式: 不同级别的警告消息的发送消息可配置
         MsgSender telephoneMsgSender = new TelephoneMsgSender(Collections.singletonList("13052057357"));
         MsgSender emailMsgSender = new EmailMsgSender(Collections.singletonList("coderandyli@163.com"));
-
         Notification severeNotification = new SevereNotification(telephoneMsgSender);
         Notification normalNotification = new NormalNotification(emailMsgSender);
-
-
         alert = new Alert();
         alert.addAlertHandler(new TpsAlertHandler(alertRule, normalNotification));
         alert.addAlertHandler(new ErrorAlertHandler(alertRule, severeNotification));

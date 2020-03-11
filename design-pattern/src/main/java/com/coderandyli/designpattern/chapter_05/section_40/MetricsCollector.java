@@ -44,7 +44,7 @@ public class MetricsCollector {
         this.eventBus.register(new EventListener());
     }
 
-    public void recordRequest(RequestInfo requestInfo) {
+    void recordRequest(RequestInfo requestInfo) {
         if (requestInfo == null || StringUtils.isBlank(requestInfo.getApiName())) {
             return;
         }

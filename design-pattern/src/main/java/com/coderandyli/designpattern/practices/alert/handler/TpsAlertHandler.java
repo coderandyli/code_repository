@@ -6,6 +6,8 @@ import com.coderandyli.designpattern.practices.alert.notification.Notification;
 
 /**
  * Created by lizhen on 2019-12-14
+ *
+ * TPS 警告处理类
  */
 public class TpsAlertHandler extends AlertHandler {
     public TpsAlertHandler(AlertRule rule, Notification notification) {

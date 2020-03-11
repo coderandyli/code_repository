@@ -6,6 +6,8 @@ import com.coderandyli.designpattern.practices.alert.notification.Notification;
 
 /**
  * Created by lizhen on 2019-12-14
+ *
+ *  警告处理抽象类
  */
 public abstract class AlertHandler {
     protected AlertRule rule;
