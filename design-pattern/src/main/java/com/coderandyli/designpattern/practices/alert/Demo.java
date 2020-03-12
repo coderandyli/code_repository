@@ -1,7 +1,7 @@
 package com.coderandyli.designpattern.practices.alert;
 
 
-        import com.coderandyli.designpattern.practices.alert.handler.ApiStatInfo;
+import com.coderandyli.designpattern.practices.alert.handler.ApiStatInfo;
 
 /**
  * Created by lizhen on 2019-12-14
