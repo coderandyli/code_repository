@@ -3,7 +3,6 @@ package com.coderandyli.designpattern.chapter_08.section_56.case_02;
 import com.coderandyli.designpattern.chapter_08.section_56.case_02.observer.RegNotificationObserver;
 import com.coderandyli.designpattern.chapter_08.section_56.case_02.observer.RegObserver;
 import com.coderandyli.designpattern.chapter_08.section_56.case_02.observer.RegPromotionObserver;
-import com.coderandyli.designpattern.chapter_08.section_56.case_02.observer.UserService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +20,7 @@ public class UserController {
     }
 
     public long register(String telephone, String password) {
+        // Ignore judgment logic...
         long userId = userService.register(telephone, password);
 
         // handles the registration logic
