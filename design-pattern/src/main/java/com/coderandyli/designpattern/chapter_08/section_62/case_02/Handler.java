@@ -19,7 +19,7 @@ public abstract class Handler {
         if (!handled && succesor != null){
             succesor.handle();
         }
-    };
+    }
 
     public abstract boolean doHandle();
 }

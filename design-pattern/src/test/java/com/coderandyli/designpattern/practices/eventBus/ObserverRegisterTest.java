@@ -1,4 +1,4 @@
-//package com.coderandyli.designpattern.practices.eventBus;
+//package com.coderandyli.designpattern.case_01.eventBus;
 //
 //import org.junit.jupiter.api.Test;
 //
