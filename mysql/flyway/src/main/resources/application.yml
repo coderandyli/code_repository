@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.30.12:3306/test?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+
+  flyway:
+    # initialize the schema history table。有历史数据时，设为true
+    baseline-on-migrate: true
