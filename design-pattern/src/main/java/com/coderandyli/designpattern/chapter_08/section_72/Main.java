@@ -6,4 +6,8 @@ package com.coderandyli.designpattern.chapter_08.section_72;
  * @date 2020/4/17 下午2:56
  */
 public class Main {
+
+    public static void main(String[] args) {
+//        Observer
+    }
 }

@@ -8,6 +8,8 @@ import java.util.concurrent.FutureTask;
 
 /**
  * Created by lizhen on 2019-01-20
+ *
+ * https://baijiahao.baidu.com/s?id=1630613195863161441&wfr=spider&for=pc
  */
 @Slf4j
 public class FutureTaskTest {
@@ -32,7 +34,7 @@ public class FutureTaskTest {
         ExecutorService executorService = Executors.newFixedThreadPool(3); //Executors.newCachedThreadPool();
 
         // 获取数据A
-        FutureTask<String> futureTaskB = new FutureTask<String>(()->{
+        FutureTask<String> futureTaskB = new FutureTask<>(()->{
             log.debug("exec taskB...");
             Thread.sleep(3000);
             return "taskB finish";
@@ -40,7 +42,7 @@ public class FutureTaskTest {
         executorService.execute(futureTaskB);
 
         // 获取数据B
-        FutureTask<String> futureTaskC = new FutureTask<String>(()->{
+        FutureTask<String> futureTaskC = new FutureTask<>(()->{
             log.debug("exec taskC...");
             Thread.sleep(4000);
             return "taskC finish";
@@ -61,27 +63,5 @@ public class FutureTaskTest {
         log.debug("执行时间：{}", endTime - startTime);
 
         return "taskA finish";
-    }
-
-    public static void test() throws Exception {
-
-         /*FutureTask<String> futureTask = new FutureTask<String>(new Callable<String>() {
-            @Override
-            public String call() throws Exception {
-                return null;
-            }
-        });*/
-
-        // lambda 表达式写法
-        FutureTask<String> futureTask = new FutureTask<>(()->{
-            log.debug("do something in callable");
-            Thread.sleep(5000);
-            return "Done";
-        });
-
-        new Thread(futureTask).start();
-        log.debug("do something in main");
-        Thread.sleep(1000);
-        log.debug("reuslt ： {}", futureTask.get());
     }
 }

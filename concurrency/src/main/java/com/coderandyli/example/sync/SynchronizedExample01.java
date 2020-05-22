@@ -8,6 +8,8 @@ import java.util.concurrent.Executors;
 /**
  * Created by lizhen on 2019-07-24
  * Synchronized demo
+ *
+ * synchronized 属于悲观锁
  */
 @Slf4j
 public class SynchronizedExample01 {

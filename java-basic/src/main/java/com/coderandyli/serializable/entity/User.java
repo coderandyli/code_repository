@@ -41,7 +41,8 @@ public class User implements Serializable {
     /**
      *
      */
-    public static Context context;
+//    public static Context context;
+    public Context context;
 
     /**
      * 职位信息

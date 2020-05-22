@@ -3,9 +3,12 @@ package com.coderandyli.easyexceldemo;
 import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.metadata.Font;
 import com.alibaba.excel.metadata.Sheet;
+import com.alibaba.excel.metadata.Table;
 import com.alibaba.excel.metadata.TableStyle;
 import com.alibaba.excel.support.ExcelTypeEnum;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.poi.ss.usermodel.BorderStyle;
+import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -46,8 +49,12 @@ public class TestController {
         response.setHeader("Content-disposition", "attachment;filename=" + System.currentTimeMillis() + ".xlsx");
         ServletOutputStream out = response.getOutputStream();
         response.setContentType("multipart/from-data");
-        ExcelWriter writer = new ExcelWriter(out, ExcelTypeEnum.XLSX, true);
-        Sheet sheet = new Sheet(1, 0, ExcelModel.class);
+
+        StyleExcelHandler handler = new StyleExcelHandler();
+
+
+        ExcelWriter writer = new ExcelWriter(null,out, ExcelTypeEnum.XLSX, true, handler);
+        Sheet sheet = new Sheet(1, 1, ExcelModel.class);
         TableStyle tableStyle = new TableStyle();
         Font font = new Font();
         font.setBold(false);
@@ -60,6 +67,7 @@ public class TestController {
         tableStyle.setTableContentFont(font1);
         tableStyle.setTableHeadBackGroundColor(IndexedColors.WHITE);
         tableStyle.setTableContentBackGroundColor(IndexedColors.AUTOMATIC);
+
         sheet.setTableStyle(tableStyle);
         sheet.setAutoWidth(true);;
 
@@ -67,6 +75,8 @@ public class TestController {
         ExcelModel excelShipOrderExportModel = new ExcelModel();
         excelShipOrderExportModel.setShipName("");
         excelShipOrderExportModel.setType("总计：");
+
+
 
         int num = accountList.stream().mapToInt(ExcelModel::getNum).sum();
         excelShipOrderExportModel.setNum(num);

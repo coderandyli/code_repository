@@ -9,7 +9,7 @@ public class Main {
     }
 
     public void register() {
-        eventBus.register(new Test());
+        eventBus.register(new TestSubscriber());
     }
 
     public void post() {

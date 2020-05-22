@@ -22,6 +22,12 @@ public class Transaction {
     private STATUS status;
     private Long walletTransactionId;
 
+    /**
+     * 为增加可测试性，通过依赖注入的方式，将WalletRpcService的创建反转到上层逻辑，
+     * 真实环境中，分布式锁也可以参照修改
+     */
+    private WalletRpcService walletRpcService;
+
     public Transaction(Long preAssignedId, Long buyerId, Long sellerId, Long productId, Long orderId) {
         if (preAssignedId != null) {
             this.id = preAssignedId;
@@ -61,12 +67,7 @@ public class Transaction {
                 return false; // 锁定未成功，返回false，job兜底执行
             }
             if (status == STATUS.EXECUTED) return true; // double check
-            long executionInvokedTimestamp = System.currentTimeMillis();
-            if (executionInvokedTimestamp - this.createTimestamp > 14) {
-                this.status = STATUS.EXPIRED;
-                return false;
-            }
-            WalletRpcService walletRpcService = new WalletRpcService();
+
             Long walletTransactionId = walletRpcService.moveMoney(id, buyerId, sellerId, amount);
             if (walletTransactionId != null) {
                 this.walletTransactionId = walletTransactionId;
@@ -117,5 +118,10 @@ public class Transaction {
 
     public Long getWalletTransactionId() {
         return walletTransactionId;
+    }
+
+    // 为增加扩展性，通过依赖注入的方式，将WalletRpcService的创建反转到上层逻辑
+    public void setWalletRpcService(WalletRpcService walletRpcService) {
+        this.walletRpcService = walletRpcService;
     }
 }

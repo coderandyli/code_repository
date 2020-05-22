@@ -13,12 +13,7 @@ public class Demo {
 
         subject.registerObserver(observerOne);
         subject.registerObserver(observerTwo);
-        subject.registerObserver(observerTwo);
 
-        subject.notifyObservers(new Message());
-
-        subject.removeObserver(observerTwo);
-        System.out.println("------------------ 华丽的分割线 ------------------");
         subject.notifyObservers(new Message());
     }
 

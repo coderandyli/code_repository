@@ -18,7 +18,7 @@ public class Main {
      * 装饰者模式
      */
     public static void test2() {
-        ALunch lunch = new Lunch(),
+        AbstractLunch lunch = new Lunch(),
                 meat = new Meat(lunch),
         vegetables = new Vegetables(meat);
         System.out.println(vegetables.eat() + "A total of " + vegetables.cost() + "yuan");

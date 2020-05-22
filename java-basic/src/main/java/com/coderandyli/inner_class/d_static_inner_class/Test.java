@@ -10,7 +10,7 @@ package com.coderandyli.inner_class.d_static_inner_class;
 public class Test {
 
     @org.junit.Test
-    public void test(){
+    public void test() {
         Outter.Inner inner = new Outter.Inner();
     }
 

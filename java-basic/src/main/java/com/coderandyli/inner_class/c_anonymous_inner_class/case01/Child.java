@@ -8,6 +8,6 @@ import com.coderandyli.inner_class.b_local_inner_class.People;
 public class Child extends Person {
     @Override
     public void eat() {
-        System.out.println("Child eat......");
+        System.out.println("Child eat ......");
     }
 }

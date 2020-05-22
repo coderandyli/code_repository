@@ -48,8 +48,8 @@ public class Main {
         Context context = new Context();
         context.setVariable("name","name");
         context.setVariable("position","position");
-        User.context = context;
-//        user.setContext(context);
+        // User.context = context;
+        user.setContext(context);
 
         // final 修饰的复杂变量，会导致序列化异常
         /*Position position = new Position();
@@ -89,7 +89,7 @@ public class Main {
             log.debug("{}", newUser);
             log.debug("User.userName {}", User.userName);
             log.debug("user.getManager().getName() = {}", user.getManager().getName());
-            log.debug("User.context = {}", User.context.toString());
+            // log.debug("User.context = {}", User.context.toString());
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {

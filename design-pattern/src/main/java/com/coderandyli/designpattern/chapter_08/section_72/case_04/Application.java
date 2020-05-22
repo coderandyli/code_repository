@@ -14,7 +14,6 @@ public class Application {
         apiStat.put("api_error_per_minute", 103l);
         apiStat.put("api_count_per_minute", 987l);
 
-
         AlertRuleInterpreter interpreter = new AlertRuleInterpreter("api_error_per_minute > 100 || api_count_per_minute > 10000");
         boolean interpret = interpreter.interpret(apiStat);
         System.out.println(interpret);

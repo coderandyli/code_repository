@@ -35,6 +35,7 @@ public class HotKeySearchServiceImpl implements HotKeySearchService {
         return true;
     }
 
+    @Override
     public List<ZSetOperations.TypedTuple<String>> search(String searkey) {
         Set<ZSetOperations.TypedTuple<String>> typedTupleSet = redisService.reverseRangeWithScores(HOT_KEYS_KEY, 0l, -1l);
         List<ZSetOperations.TypedTuple<String>> list = typedTupleSet.stream().

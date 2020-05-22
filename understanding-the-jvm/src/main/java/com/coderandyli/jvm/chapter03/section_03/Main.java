@@ -49,7 +49,6 @@ public class Main {
      */
     public static void testPretenureSizeThreshold(){
         byte[] allocation = new byte[8*_1MB];
-
     }
 
     /**
@@ -81,6 +80,6 @@ public class Main {
     }
 
     public static void main(String args[]) {
-        testTenuringThreshold();
+        testPretenureSizeThreshold();
     }
 }

@@ -1,19 +1,19 @@
 package com.coderandyli.designpattern.chapter_07.section_50;
 
-public class Meat extends ALunch {
-    private ALunch aLunch;
+public class Meat extends AbstractLunch {
+    private AbstractLunch abstractLunch;
 
-    public Meat(ALunch aLunch) {
-        this.aLunch = aLunch;
+    public Meat(AbstractLunch abstractLunch) {
+        this.abstractLunch = abstractLunch;
     }
 
     @Override
     public String eat() {
-        return aLunch.eat() + "、meat";
+        return abstractLunch.eat() + "、meat";
     }
 
     @Override
     public double cost() {
-        return aLunch.cost() + 8;
+        return abstractLunch.cost() + 8;
     }
 }

@@ -9,7 +9,6 @@ import java.util.List;
  * <p>
  * 有界通配符(参数类型边界)
  *
- *
  */
 public class BoundedTypeParametersTest {
 
@@ -43,7 +42,6 @@ public class BoundedTypeParametersTest {
         parametersTest.genericType(Arrays.asList(doubles)); // Double
         System.out.println();
         parametersTest.genericType(Arrays.asList(strings)); // String
-
     }
 
 

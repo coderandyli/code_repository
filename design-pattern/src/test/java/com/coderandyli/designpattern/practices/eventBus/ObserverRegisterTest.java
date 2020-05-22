@@ -1,6 +1,6 @@
 //package com.coderandyli.designpattern.case_01.eventBus;
 //
-//import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.TestSubscriber;
 //
 //import java.util.List;
 //
@@ -13,7 +13,7 @@
 // */
 //class ObserverRegisterTest {
 //
-//    @Test
+//    @TestSubscriber
 //    void getAllSubscribeMethods() {
 //        ObserverRegister observerRegister = new ObserverRegister();
 //        List<ObserverMethod> allSubscribeMethods = observerRegister.getAllSubscribeMethods(new AnnotationTest());

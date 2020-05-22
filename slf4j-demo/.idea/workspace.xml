@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9bf383f-a535-41ef-b85c-754792f608d1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_18_ISP/case_04/Updater.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../fastdfsdemo/.idea/checkstyle-idea.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../fastdfsdemo/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../fastdfsdemo/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../fastdfsdemo/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../fastdfsdemo/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../fastdfsdemo/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../fastdfsdemo/src/main/java/com/coderandyli/fastdfsdemo/controller/FileStorageController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../java-basic/src/main/java/com/coderandyli/asserts/Main.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../java-basic/src/main/java/com/coderandyli/generics/TypeErasureTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../java-basic/src/main/java/com/coderandyli/rmi/client/RegistryClient.java" afterDir="false" />
@@ -19,21 +19,6 @@
       <change afterPath="$PROJECT_DIR$/../project-demo/src/main/java/com/coderandyli/project/entity/Test.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../project-demo/src/main/java/com/coderandyli/project/mapper/TestMapper.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../project-demo/src/main/resources/mapper/TestMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HELP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/slf4j-demo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderandyli/slf4jdemo/Slf4jDemoApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/coderandyli/slf4jdemo/controller/LogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/coderandyli/slf4jdemo/Slf4jDemoApplicationTests.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../understanding-the-jvm/src/main/java/com/coderandyli/jvm/chapter04/BtraceTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../understanding-the-jvm/src/main/java/com/coderandyli/jvm/chapter04/DeadLock.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../understanding-the-jvm/src/main/java/com/coderandyli/jvm/chapter04/Main.java" afterDir="false" />
@@ -50,13 +35,58 @@
       <change beforePath="$PROJECT_DIR$/../concurrency/src/main/java/com/coderandyli/example/aqs/FutureTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../concurrency/src/main/java/com/coderandyli/example/aqs/FutureTaskTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../concurrency/src/main/java/com/coderandyli/example/sync/SynchronizedExample01.java" beforeDir="false" afterPath="$PROJECT_DIR$/../concurrency/src/main/java/com/coderandyli/example/sync/SynchronizedExample01.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../data-structure/src/main/java/com/coderandyli/algo/BitMap/BitSetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../data-structure/src/main/java/com/coderandyli/algo/BitMap/BitSetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_16_OCP/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_16_OCP/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_16_OCP/alert/case_01/Alert.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_16_OCP/alert/case_01/Alert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_16_OCP/alert/case_02/Alert.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_16_OCP/alert/case_02/Alert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_16_OCP/alert/case_03/Alert.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_16_OCP/alert/case_03/Alert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_16_OCP/alert/case_03/ApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_16_OCP/alert/case_03/ApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_16_OCP/alert/case_03/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_16_OCP/alert/case_03/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_16_OCP/alert/case_03/handle/AlertHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_16_OCP/alert/case_03/handle/AlertHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_16_OCP/alert/case_03/handle/ApiStatInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_16_OCP/alert/case_03/handle/ApiStatInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_16_OCP/alert/case_03/handle/ErrorAlertHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_16_OCP/alert/case_03/handle/ErrorAlertHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_16_OCP/alert/case_03/handle/TpsAlertHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_16_OCP/alert/case_03/handle/TpsAlertHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_16_OCP/alert/fixture/AlertRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_16_OCP/alert/fixture/AlertRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_16_OCP/alert/fixture/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_16_OCP/alert/fixture/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_16_OCP/alert/fixture/NotificationEmergencyLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_16_OCP/alert/fixture/NotificationEmergencyLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_17_LSP/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_17_LSP/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_18_ISP/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_18_ISP/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_18_ISP/case_01/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_18_ISP/case_01/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_18_ISP/case_01/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_18_ISP/case_01/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_18_ISP/case_02/RestrictedUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_18_ISP/case_02/RestrictedUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_18_ISP/case_02/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_18_ISP/case_02/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_18_ISP/case_02/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_18_ISP/case_02/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_18_ISP/case_04/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_18_ISP/case_04/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_18_ISP/case_04/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_18_ISP/case_04/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_18_ISP/case_04/MysqlConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_18_ISP/case_04/MysqlConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_18_ISP/case_04/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_18_ISP/case_04/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_18_ISP/case_04/ScheduledUpdater.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_18_ISP/case_04/ScheduledUpdater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_18_ISP/case_04/SimpleHttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_18_ISP/case_04/SimpleHttpServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_18_ISP/case_04/Updater.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_18_ISP/case_04/Viewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_18_ISP/case_04/Viewer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_19_DIP/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_19_DIP/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_19_DIP/case_01/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_19_DIP/case_01/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_19_DIP/case_02/JunitApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_19_DIP/case_02/JunitApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_19_DIP/case_02/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_19_DIP/case_02/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_19_DIP/case_02/TestCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_19_DIP/case_02/TestCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_19_DIP/case_02/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_19_DIP/case_02/UserServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_19_DIP/case_03/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_19_DIP/case_03/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_19_DIP/case_03/MessageSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_19_DIP/case_03/MessageSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_19_DIP/case_03/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_19_DIP/case_03/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_19_DIP/case_04/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_19_DIP/case_04/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_19_DIP/case_04/MessageSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_19_DIP/case_04/MessageSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_19_DIP/case_04/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_19_DIP/case_04/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_19_DIP/case_05/InboxSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_19_DIP/case_05/InboxSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_19_DIP/case_05/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_19_DIP/case_05/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_19_DIP/case_05/MessageSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_19_DIP/case_05/MessageSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_19_DIP/case_05/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_19_DIP/case_05/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_SOLID/section_19_DIP/case_05/SmsSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/../design-pattern/src/main/java/com/coderandyli/designpattern/chapter_04_designPhilosophy/solid/section_19_DIP/case_05/SmsSender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyexcel-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../easyexcel-demo/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyexcel-demo/src/main/java/com/coderandyli/easyexceldemo/ExcelModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../easyexcel-demo/src/main/java/com/coderandyli/easyexceldemo/ExcelModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../easyexcel-demo/src/main/java/com/coderandyli/easyexceldemo/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../easyexcel-demo/src/main/java/com/coderandyli/easyexceldemo/TestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../fastdfsdemo/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/../fastdfsdemo/HELP.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../fastdfsdemo/src/main/java/com/coderandyli/fastdfsdemo/FastDFSClientUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../fastdfsdemo/src/main/java/com/coderandyli/fastdfsdemo/utils/FastDFSClientUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../fastdfsdemo/src/main/java/com/coderandyli/fastdfsdemo/FastDFSConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../fastdfsdemo/src/main/java/com/coderandyli/fastdfsdemo/config/FastDFSConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../fastdfsdemo/src/main/java/com/coderandyli/fastdfsdemo/UploadController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fastdfsdemo/src/main/java/com/coderandyli/fastdfsdemo/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../fastdfsdemo/src/main/java/com/coderandyli/fastdfsdemo/controller/FileStorageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-basic/src/main/java/com/coderandyli/generics/BoundedTypeParametersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-basic/src/main/java/com/coderandyli/generics/BoundedTypeParametersTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-basic/src/main/java/com/coderandyli/generics/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../java-basic/src/main/java/com/coderandyli/generics/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-basic/src/main/java/com/coderandyli/serializable/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java-basic/src/main/java/com/coderandyli/serializable/Main.java" afterDir="false" />
@@ -66,6 +96,7 @@
       <change beforePath="$PROJECT_DIR$/../project-demo/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../project-demo/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../redis-demo/src/main/java/com/coderandyli/redis/demo/service/impl/HotKeySearchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../redis-demo/src/main/java/com/coderandyli/redis/demo/service/impl/HotKeySearchServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../redis-demo/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../redis-demo/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../swaggerDemo/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../swaggerDemo/pom.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../swaggerDemo/src/main/java/com/coderandyli/demo/DemoApplication.java" beforeDir="false" />
@@ -125,7 +156,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -210,66 +241,98 @@
       <option name="presentableId" value="Default" />
       <updated>1577951777741</updated>
       <workItem from="1577951780810" duration="28000" />
-      <workItem from="1577951830964" duration="2547000" />
+      <workItem from="1577951830964" duration="3319000" />
     </task>
+    <task id="LOCAL-00001" summary="slf4jDemo">
+      <created>1577954473775</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577954473775</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="slf4jDemo" />
+    <option name="LAST_COMMIT_MESSAGE" value="slf4jDemo" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1876" height="532" key="GridCell.Tab.0.bottom" timestamp="1577953903465">
+    <state x="196" y="-1015" key="CommitChangelistDialog2" timestamp="1577954471994">
       <screen x="-316" y="-1177" width="1920" height="1177" />
     </state>
+    <state x="196" y="-1015" key="CommitChangelistDialog2/0.23.1440.832/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577954471994" />
+    <state width="1876" height="532" key="GridCell.Tab.0.bottom" timestamp="1577955385790">
+      <screen x="-316" y="-1177" width="1920" height="1177" />
+    </state>
+    <state width="1876" height="532" key="GridCell.Tab.0.bottom/0.23.1440.831/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577955385790" />
     <state width="1876" height="532" key="GridCell.Tab.0.bottom/0.23.1440.832/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577953903465" />
-    <state width="1876" height="532" key="GridCell.Tab.0.center" timestamp="1577953903463">
+    <state width="1876" height="532" key="GridCell.Tab.0.center" timestamp="1577955385788">
       <screen x="-316" y="-1177" width="1920" height="1177" />
     </state>
+    <state width="1876" height="532" key="GridCell.Tab.0.center/0.23.1440.831/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577955385788" />
     <state width="1876" height="532" key="GridCell.Tab.0.center/0.23.1440.832/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577953903463" />
-    <state width="1876" height="532" key="GridCell.Tab.0.left" timestamp="1577953903463">
+    <state width="1876" height="532" key="GridCell.Tab.0.left" timestamp="1577955385786">
       <screen x="-316" y="-1177" width="1920" height="1177" />
     </state>
+    <state width="1876" height="532" key="GridCell.Tab.0.left/0.23.1440.831/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577955385786" />
     <state width="1876" height="532" key="GridCell.Tab.0.left/0.23.1440.832/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577953903463" />
-    <state width="1876" height="532" key="GridCell.Tab.0.right" timestamp="1577953903464">
+    <state width="1876" height="532" key="GridCell.Tab.0.right" timestamp="1577955385789">
       <screen x="-316" y="-1177" width="1920" height="1177" />
     </state>
+    <state width="1876" height="532" key="GridCell.Tab.0.right/0.23.1440.831/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577955385789" />
     <state width="1876" height="532" key="GridCell.Tab.0.right/0.23.1440.832/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577953903464" />
-    <state width="1876" height="532" key="GridCell.Tab.1.bottom" timestamp="1577953903467">
+    <state width="1876" height="532" key="GridCell.Tab.1.bottom" timestamp="1577955385791">
       <screen x="-316" y="-1177" width="1920" height="1177" />
     </state>
+    <state width="1876" height="532" key="GridCell.Tab.1.bottom/0.23.1440.831/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577955385791" />
     <state width="1876" height="532" key="GridCell.Tab.1.bottom/0.23.1440.832/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577953903467" />
-    <state width="1876" height="532" key="GridCell.Tab.1.center" timestamp="1577953903466">
+    <state width="1876" height="532" key="GridCell.Tab.1.center" timestamp="1577955385790">
       <screen x="-316" y="-1177" width="1920" height="1177" />
     </state>
+    <state width="1876" height="532" key="GridCell.Tab.1.center/0.23.1440.831/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577955385790" />
     <state width="1876" height="532" key="GridCell.Tab.1.center/0.23.1440.832/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577953903466" />
-    <state width="1876" height="532" key="GridCell.Tab.1.left" timestamp="1577953903465">
+    <state width="1876" height="532" key="GridCell.Tab.1.left" timestamp="1577955385790">
       <screen x="-316" y="-1177" width="1920" height="1177" />
     </state>
+    <state width="1876" height="532" key="GridCell.Tab.1.left/0.23.1440.831/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577955385790" />
     <state width="1876" height="532" key="GridCell.Tab.1.left/0.23.1440.832/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577953903465" />
-    <state width="1876" height="532" key="GridCell.Tab.1.right" timestamp="1577953903466">
+    <state width="1876" height="532" key="GridCell.Tab.1.right" timestamp="1577955385791">
       <screen x="-316" y="-1177" width="1920" height="1177" />
     </state>
+    <state width="1876" height="532" key="GridCell.Tab.1.right/0.23.1440.831/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577955385791" />
     <state width="1876" height="532" key="GridCell.Tab.1.right/0.23.1440.832/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577953903466" />
-    <state width="1876" height="532" key="GridCell.Tab.2.bottom" timestamp="1577953903468">
+    <state width="1876" height="532" key="GridCell.Tab.2.bottom" timestamp="1577955385793">
       <screen x="-316" y="-1177" width="1920" height="1177" />
     </state>
+    <state width="1876" height="532" key="GridCell.Tab.2.bottom/0.23.1440.831/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577955385793" />
     <state width="1876" height="532" key="GridCell.Tab.2.bottom/0.23.1440.832/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577953903468" />
-    <state width="1876" height="532" key="GridCell.Tab.2.center" timestamp="1577953903467">
+    <state width="1876" height="532" key="GridCell.Tab.2.center" timestamp="1577955385792">
       <screen x="-316" y="-1177" width="1920" height="1177" />
     </state>
+    <state width="1876" height="532" key="GridCell.Tab.2.center/0.23.1440.831/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577955385792" />
     <state width="1876" height="532" key="GridCell.Tab.2.center/0.23.1440.832/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577953903467" />
-    <state width="1876" height="532" key="GridCell.Tab.2.left" timestamp="1577953903467">
+    <state width="1876" height="532" key="GridCell.Tab.2.left" timestamp="1577955385792">
       <screen x="-316" y="-1177" width="1920" height="1177" />
     </state>
+    <state width="1876" height="532" key="GridCell.Tab.2.left/0.23.1440.831/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577955385792" />
     <state width="1876" height="532" key="GridCell.Tab.2.left/0.23.1440.832/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577953903467" />
-    <state width="1876" height="532" key="GridCell.Tab.2.right" timestamp="1577953903468">
+    <state width="1876" height="532" key="GridCell.Tab.2.right" timestamp="1577955385792">
       <screen x="-316" y="-1177" width="1920" height="1177" />
     </state>
+    <state width="1876" height="532" key="GridCell.Tab.2.right/0.23.1440.831/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577955385792" />
     <state width="1876" height="532" key="GridCell.Tab.2.right/0.23.1440.832/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577953903468" />
-    <state x="141" y="-950" key="SettingsEditor" timestamp="1577952049575">
+    <state x="141" y="-950" key="SettingsEditor" timestamp="1577954683128">
       <screen x="-316" y="-1177" width="1920" height="1177" />
     </state>
-    <state x="141" y="-950" key="SettingsEditor/0.23.1440.832/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577952049575" />
+    <state x="141" y="-950" key="SettingsEditor/0.23.1440.832/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577954683128" />
+    <state x="232" y="-847" key="Vcs.Push.Dialog.v2" timestamp="1577954476161">
+      <screen x="-316" y="-1177" width="1920" height="1177" />
+    </state>
+    <state x="232" y="-847" key="Vcs.Push.Dialog.v2/0.23.1440.832/-316.-1177.1920.1177@-316.-1177.1920.1177" timestamp="1577954476161" />
     <state x="297" y="-912" width="670" height="676" key="search.everywhere.popup" timestamp="1577952176139">
       <screen x="-316" y="-1177" width="1920" height="1177" />
     </state>

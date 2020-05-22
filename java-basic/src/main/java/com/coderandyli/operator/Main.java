@@ -25,7 +25,7 @@ import java.util.HashMap;
 public class Main {
 
     public static void main(String args[]) {
-        log.debug("{}", tableSizeFor(1000));
+//        log.debug("{}", tableSizeFor(1000));
     }
     /**
      * 移位运算符
@@ -55,7 +55,7 @@ public class Main {
     @Test
     public void test02() {
         int rightShift = -80; //
-        int newRightShift = -80 >> 3; // -32
+        int newRightShift = -80 >> 3; //
 
         log.info("【有符号右移十进制形式】：位移前：{},位移后：{}", rightShift, newRightShift);
         log.info("【有符号右移二进制形式】：位移前：{},位移后：{}", Integer.toBinaryString(rightShift), Integer.toBinaryString(newRightShift));
@@ -101,16 +101,16 @@ public class Main {
 
     static final int MAXIMUM_CAPACITY = 1 << 30;
 
-    @Test
-    public static final int tableSizeFor(int cap) {
-        int n = cap - 1;
-        n |= n >>> 1;
-        n |= n >>> 2;
-        n |= n >>> 4;
-        n |= n >>> 8;
-        n |= n >>> 16;
-        return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
-    }
+//    @Test
+//    public static final int tableSizeFor(int cap) {
+//        int n = cap - 1;
+//        n |= n >>> 1;
+//        n |= n >>> 2;
+//        n |= n >>> 4;
+//        n |= n >>> 8;
+//        n |= n >>> 16;
+//        return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
+//    }
 
     /**
      * 按位与运算符（&）

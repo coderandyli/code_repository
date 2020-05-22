@@ -6,9 +6,9 @@ package com.coderandyli.designpattern.chapter_04_designPhilosophy.solid.section_
 public abstract class TestCase {
     public void run() {
         if (doTest()) {
-            System.out.println("Test succeed.");
+            System.out.println("TestSubscriber succeed.");
         } else {
-            System.out.println("Test failed.");
+            System.out.println("TestSubscriber failed.");
         }
     }
 

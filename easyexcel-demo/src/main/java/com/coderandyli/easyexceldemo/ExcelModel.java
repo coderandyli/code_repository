@@ -10,6 +10,11 @@ import lombok.Data;
 @Data
 public class ExcelModel extends BaseRowModel {
 
+    /**
+     * 表格样式：使用
+     */
+    private StyleExcelHandler writeHandler;
+
     @ExcelProperty(value = "船舶名称", index = 0)
     private String shipName;
 

@@ -7,7 +7,7 @@ import java.util.List;
  * Created by lizhen on 2019-10-05
  * <p>
  * RunTimeConstantPool Test
- * 运行时常量池具有动态性，String.intern()可以在运行期间将新的常量加入到动态常量池中
+ * 运行时常量池具有动态性，String.intern()可以在运行期间将新的常量加入到运行时常量池中
  */
 public class Test5 {
     public static void main(String args[]) {
