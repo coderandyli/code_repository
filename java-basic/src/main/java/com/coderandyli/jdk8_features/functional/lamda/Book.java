@@ -1,18 +1,24 @@
-package com.coderandyli.lamda;
+package com.coderandyli.jdk8_features.functional.lamda;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
  * Created by lizhen on 2019-05-19
  */
-@AllArgsConstructor
 @Data
 public class Book {
 
     private String name;
 
     private int price;
+
+    public Book() {
+    }
+
+    public Book(String name, int price) {
+        this.name = name;
+        this.price = price;
+    }
 
     @Override
     public boolean equals(Object obj) {

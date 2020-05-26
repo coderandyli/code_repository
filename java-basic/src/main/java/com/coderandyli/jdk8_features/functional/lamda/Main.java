@@ -1,4 +1,4 @@
-package com.coderandyli.lamda;
+package com.coderandyli.jdk8_features.functional.lamda;
 
 import org.junit.Test;
 

@@ -38,24 +38,6 @@ public class ObserverRegistry {
     }
 
     /**
-     * 获取指定方法参数类型的参数
-     * @param event
-     * @return
-     */
-    public List<ObserverAction> getMatchedObserverActions(Object event) {
-        List<ObserverAction> matchedObservers = new ArrayList<>();
-        Class<?> postedEventType = event.getClass();
-        for (Map.Entry<Class<?>, CopyOnWriteArraySet<ObserverAction>> entry : registry.entrySet()) {
-            Class<?> eventType = entry.getKey();
-            Collection<ObserverAction> eventActions = entry.getValue();
-            if (eventType.isAssignableFrom(postedEventType)) {
-                matchedObservers.addAll(eventActions);
-            }
-        }
-        return matchedObservers;
-    }
-
-    /**
      * find all observerActions
      *
      * @param observer
@@ -95,4 +77,24 @@ public class ObserverRegistry {
         }
         return annotatedMethods;
     }
+
+    /**
+     * 获取指定方法参数类型的参数
+     * @param event
+     * @return
+     */
+    public List<ObserverAction> getMatchedObserverActions(Object event) {
+        List<ObserverAction> matchedObservers = new ArrayList<>();
+        Class<?> postedEventType = event.getClass();
+        for (Map.Entry<Class<?>, CopyOnWriteArraySet<ObserverAction>> entry : registry.entrySet()) {
+            Class<?> eventType = entry.getKey();
+            Collection<ObserverAction> eventActions = entry.getValue();
+            if (eventType.isAssignableFrom(postedEventType)) {
+                matchedObservers.addAll(eventActions);
+            }
+        }
+        return matchedObservers;
+    }
+
+
 }

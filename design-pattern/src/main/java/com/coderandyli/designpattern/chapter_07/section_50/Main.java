@@ -20,7 +20,7 @@ public class Main {
     public static void test2() {
         AbstractLunch lunch = new Lunch(),
                 meat = new Meat(lunch),
-        vegetables = new Vegetables(meat);
+                vegetables = new Vegetables(meat);
         System.out.println(vegetables.eat() + "A total of " + vegetables.cost() + "yuan");
     }
 
