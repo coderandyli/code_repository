@@ -4,13 +4,13 @@ spring:
   application:
     name: redis-demo
 
-#  redis:
+  redis:
 #    sentinel:
 #      master: mymaster
 #      nodes: 39.104.124.39:26379
 
-#    host: 39.104.124.39
-#    port: 6379
+    host: localhost
+    port: 6379
 #    database: 1
 
 #    lettuce:

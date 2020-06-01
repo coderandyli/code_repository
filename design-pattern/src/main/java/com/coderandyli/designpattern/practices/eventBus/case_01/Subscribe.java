@@ -1,4 +1,4 @@
-package com.coderandyli.designpattern.practices.eventBus;
+package com.coderandyli.designpattern.practices.eventBus.case_01;
 
 import java.lang.annotation.*;
 

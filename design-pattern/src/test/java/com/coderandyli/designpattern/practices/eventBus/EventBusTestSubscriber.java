@@ -1,5 +1,6 @@
 package com.coderandyli.designpattern.practices.eventBus;
 
+import com.coderandyli.designpattern.practices.eventBus.case_01.EventBus;
 import com.coderandyli.designpattern.practices.eventBus.observer.ObserverOne;
 import com.coderandyli.designpattern.practices.eventBus.observer.ObserverTwo;
 import org.junit.jupiter.api.Test;

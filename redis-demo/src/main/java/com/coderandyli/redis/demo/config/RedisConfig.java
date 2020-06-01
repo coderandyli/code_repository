@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.interceptor.KeyGenerator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,21 +32,21 @@ public class RedisConfig {
     /**
      * Configuring the Lettuce Connector
      */
-    @Bean
-    public RedisConnectionFactory lettuceConnectionFactory() {
-        RedisSentinelConfiguration sentinelConfig = new RedisSentinelConfiguration()
-                .master("mymaster")
-                .sentinel("106.12.28.134", 26379);
-        return new LettuceConnectionFactory(sentinelConfig);
-
-        // 单机模式配置
-//        RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration();
-//        configuration.setHostName("39.104.124.39");
-//        // configuration.setPassword();
-//        configuration.setDatabase(1);
-//        configuration.setPort(6379);
-//        return new LettuceConnectionFactory(configuration);
-    }
+//    @Bean
+//    public RedisConnectionFactory lettuceConnectionFactory() {
+//        RedisSentinelConfiguration sentinelConfig = new RedisSentinelConfiguration()
+//                .master("mymaster")
+//                .sentinel("106.12.28.134", 26379);
+//        return new LettuceConnectionFactory(sentinelConfig);
+//
+//        // 单机模式配置
+////        RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration();
+////        configuration.setHostName("39.104.124.39");
+////        // configuration.setPassword();
+////        configuration.setDatabase(1);
+////        configuration.setPort(6379);
+////        return new LettuceConnectionFactory(configuration);
+//    }
 
     /**
      * redisTemplate 序列化使用的jdkSerializeable, 存储二进制字节码, 所以自定义序列化类
@@ -98,38 +99,37 @@ public class RedisConfig {
         };
     }
 
-    @Bean
-    public CacheManager cacheManager(RedisConnectionFactory redisConnectionFactory) {
+//    @Bean
+//    public CacheManager cacheManager(RedisConnectionFactory redisConnectionFactory) {
+//        return new RedisCacheManager(
+//                RedisCacheWriter.nonLockingRedisCacheWriter(redisConnectionFactory),
+//                this.getRedisCacheConfigurationWithTtl(10), // 默认策略，未配置的 key 会使用这个
+//                this.getRedisCacheConfigurationMap() // 指定 key 策略
+//        );
+//    }
 
-        return new RedisCacheManager(
-                RedisCacheWriter.nonLockingRedisCacheWriter(redisConnectionFactory),
-                this.getRedisCacheConfigurationWithTtl(10), // 默认策略，未配置的 key 会使用这个
-                this.getRedisCacheConfigurationMap() // 指定 key 策略
-        );
-    }
+//    private Map<String, RedisCacheConfiguration> getRedisCacheConfigurationMap() {
+//        Map<String, RedisCacheConfiguration> redisCacheConfigurationMap = new HashMap<>();
+//        redisCacheConfigurationMap.put("UserInfoList", this.getRedisCacheConfigurationWithTtl(100));
+//        redisCacheConfigurationMap.put("UserInfoListAnother", this.getRedisCacheConfigurationWithTtl(18000));
+//
+//        return redisCacheConfigurationMap;
+//    }
 
-    private Map<String, RedisCacheConfiguration> getRedisCacheConfigurationMap() {
-        Map<String, RedisCacheConfiguration> redisCacheConfigurationMap = new HashMap<>();
-        redisCacheConfigurationMap.put("UserInfoList", this.getRedisCacheConfigurationWithTtl(100));
-        redisCacheConfigurationMap.put("UserInfoListAnother", this.getRedisCacheConfigurationWithTtl(18000));
-
-        return redisCacheConfigurationMap;
-    }
-
-    private RedisCacheConfiguration getRedisCacheConfigurationWithTtl(Integer seconds) {
-        Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<>(Object.class);
-        ObjectMapper om = new ObjectMapper();
-        om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
-        om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
-        jackson2JsonRedisSerializer.setObjectMapper(om);
-
-        RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig();
-        redisCacheConfiguration = redisCacheConfiguration.serializeValuesWith(
-                RedisSerializationContext
-                        .SerializationPair
-                        .fromSerializer(jackson2JsonRedisSerializer)
-        ).entryTtl(Duration.ofSeconds(seconds));
-
-        return redisCacheConfiguration;
-    }
+//    private RedisCacheConfiguration getRedisCacheConfigurationWithTtl(Integer seconds) {
+//        Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<>(Object.class);
+//        ObjectMapper om = new ObjectMapper();
+//        om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
+//        om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
+//        jackson2JsonRedisSerializer.setObjectMapper(om);
+//
+//        RedisCacheConfiguration redisCacheConfiguration = RedisCacheConfiguration.defaultCacheConfig();
+//        redisCacheConfiguration = redisCacheConfiguration.serializeValuesWith(
+//                RedisSerializationContext
+//                        .SerializationPair
+//                        .fromSerializer(jackson2JsonRedisSerializer)
+//        ).entryTtl(Duration.ofSeconds(seconds));
+//
+//        return redisCacheConfiguration;
+//    }
 }

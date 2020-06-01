@@ -83,7 +83,7 @@ public class ObserverRegistry {
      * @param event
      * @return
      */
-    public List<ObserverAction> getMatchedObserverActions(Object event) {
+    List<ObserverAction> getMatchedObserverActions(Object event) {
         List<ObserverAction> matchedObservers = new ArrayList<>();
         Class<?> postedEventType = event.getClass();
         for (Map.Entry<Class<?>, CopyOnWriteArraySet<ObserverAction>> entry : registry.entrySet()) {

@@ -1,5 +1,7 @@
 package com.coderandyli.designpattern.practices.eventBus;
 
+import com.coderandyli.designpattern.practices.eventBus.case_01.Subscribe;
+
 /**
  * @author lizhenzhen
  * @version 1.0

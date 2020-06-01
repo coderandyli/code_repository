@@ -1,6 +1,6 @@
 package com.coderandyli.designpattern.practices.eventBus.observer;
 
-import com.coderandyli.designpattern.practices.eventBus.Subscribe;
+import com.coderandyli.designpattern.practices.eventBus.case_01.Subscribe;
 import lombok.extern.slf4j.Slf4j;
 
 /**
