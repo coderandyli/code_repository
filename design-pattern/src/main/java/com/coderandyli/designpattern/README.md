@@ -44,7 +44,7 @@
 # chapter_08
 ## section_56 观察者模式
 ## section_57 观察者模式
-## section_59 观察者模式
+## section_59 模板模式之callback回调函数
 ## section_60 策略模式
 ## section_61 策略模式
 ## section_62 职责链模式
