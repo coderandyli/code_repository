@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration  status="debug">
+
+    <appenders>
+            <!--定义输出控制台-->
+            <Console name="STDOUT">
+                <!--定义日志输出要求:控制台匹配level及以上的日志,匹配执行onmatch,否则执行mismatch-->
+                <ThreshlodFilter level="debug" onMatch="ACCEPT" misMatch="DENY"></ThreshlodFilter>
+                <!--定义输出格式:时间 线程名 级别-->
+                <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS}[%t] %-5level [%logger{50}:%L]  [%X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-B3-ParentSpanId},%X{X-Span-Export}]  - %msg%n" charset="UTF-8"></PatternLayout>
+            </Console>
+
+            <!--为FILE-INFO构建一个appender:输出到工程目录下的logs/house-info.log文件中-->
+            <!--滚动时以文件日期为准:每小时会产生一个日志文件-->
+            <RollingRandomAccessFile name="FILE-INFO" fileName="logs/house-info.log"
+                                                               filePattern="logs/house-info.%d{yyyy-MM-dd-HH}.log">
+            <!--定义日志输出要求:控制台匹配level及以上的日志,匹配执行onmatch,否则执行mismatch-->
+            <ThreshlodFilter level="info" onMatch="ACCEPT" misMatch="DENY"></ThreshlodFilter>
+            <!--定义输出格式:时间 线程名 级别-->
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS}[%t] %-5level [%logger{50}:%L]  [%X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-B3-ParentSpanId},%X{X-Span-Export}]  - %msg%n" charset="UTF-8"></PatternLayout>
+            <!--定义触发滚动频率:按时间-->
+            <TimeBasedTriggeringPolicy interval="1"/>
+            <!--基于大小-->
+            <!--<SizeBasedTriggeringPolicy size="100 MB"/>-->
+            <DefaultRolloverStrategy max="1">
+                <!--定义删除策略-->
+                <Delete basePath="logs" maxDepth="2">
+                    <!--删除的文件通配符-->
+                    <IfFileName glob="*house-info.*.log"/>
+                    <!--保留48个小时,其余删除-->
+                    <IfLastModified age="1h"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingRandomAccessFile>
+
+        <RollingRandomAccessFile name="FILE-DEBUG" fileName="logs/house-debug.log"
+                                 filePattern="logs/house-debug.%d{yyyy-MM-dd-HH}.log">
+            <!--定义日志输出要求:控制台匹配level及以上的日志,匹配执行onmatch,否则执行mismatch-->
+            <ThreshlodFilter level="debug" onMatch="ACCEPT" misMatch="DENY"></ThreshlodFilter>
+            <!--定义输出格式:时间 线程名 级别-->
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS}[%t] %-5level [%logger{50}:%L]  [%X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-B3-ParentSpanId},%X{X-Span-Export}]  - %msg%n" charset="UTF-8"></PatternLayout>
+            <!--定义触发滚动频率:按时间-->
+            <TimeBasedTriggeringPolicy interval="1"/>
+            <!--基于大小-->
+            <!--<SizeBasedTriggeringPolicy size="100 MB"/>-->
+            <DefaultRolloverStrategy max="1">
+                <!--定义删除策略-->
+                <Delete basePath="logs" maxDepth="2">
+                    <!--删除的文件通配符-->
+                    <IfFileName glob="*house-debug.*.log"/>
+                    <!--保留48个小时,其余删除-->
+                    <IfLastModified age="1h"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingRandomAccessFile>
+
+        <RollingRandomAccessFile name="FILE-WARN" fileName="logs/house-warn.log"
+                                 filePattern="logs/house-warn.%d{yyyy-MM-dd-HH}.log">
+            <!--定义日志输出要求:控制台匹配level及以上的日志,匹配执行onmatch,否则执行mismatch-->
+            <ThreshlodFilter level="warn" onMatch="ACCEPT" misMatch="DENY"></ThreshlodFilter>
+            <!--定义输出格式:时间 线程名 级别-->
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS}[%t] %-5level [%logger{50}:%L]  [%X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-B3-ParentSpanId},%X{X-Span-Export}]  - %msg%n" charset="UTF-8"></PatternLayout>
+            <!--定义触发滚动频率:按时间-->
+            <TimeBasedTriggeringPolicy interval="1"/>
+            <!--基于大小-->
+            <!--<SizeBasedTriggeringPolicy size="100 MB"/>-->
+            <DefaultRolloverStrategy max="1">
+                <!--定义删除策略-->
+                <Delete basePath="logs" maxDepth="2">
+                    <!--删除的文件通配符-->
+                    <IfFileName glob="*house-warn.*.log"/>
+                    <!--保留48个小时,其余删除-->
+                    <IfLastModified age="1h"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingRandomAccessFile>
+
+        <RollingRandomAccessFile name="FILE-ERROR" fileName="logs/house-error.log"
+                                 filePattern="logs/house-error.%d{yyyy-MM-dd-HH}.log">
+            <!--定义日志输出要求:控制台匹配level及以上的日志,匹配执行onmatch,否则执行mismatch-->
+            <ThreshlodFilter level="error" onMatch="ACCEPT" misMatch="DENY"></ThreshlodFilter>
+            <!--定义输出格式:时间 线程名 级别-->
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS}[%t] %-5level [%logger{50}:%L]  [%X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-B3-ParentSpanId},%X{X-Span-Export}]  - %msg%n" charset="UTF-8"></PatternLayout>
+            <!--定义触发滚动频率:按时间-->
+            <TimeBasedTriggeringPolicy interval="1"/>
+            <!--基于大小-->
+            <!--<SizeBasedTriggeringPolicy size="100 MB"/>-->
+            <DefaultRolloverStrategy max="1">
+                <!--定义删除策略-->
+                <Delete basePath="logs" maxDepth="2">
+                    <!--删除的文件通配符-->
+                    <IfFileName glob="*house-error.*.log"/>
+                    <!--保留48个小时,其余删除-->
+                    <IfLastModified age="48h"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingRandomAccessFile>
+        <!--...-->
+    </appenders>
+
+    <loggers>
+
+        <!--采用异步-->
+        <!--对于swagger的日志,关闭记录-->
+        <AsyncLogger name="springfox" level="OFF"></AsyncLogger>
+        <!--总的日志记录,includeLocation打印出行号-->
+        <AsyncRoot level="INFO" includeLocation="true">
+            <!--引用的追加器是在appenders里定义的-->
+            <AppenderRef ref="FILE-INFO"></AppenderRef>
+            <AppenderRef ref="FILE-WARNING"></AppenderRef>
+            <AppenderRef ref="FILE-ERROR"></AppenderRef>
+            <AppenderRef ref="FILE-DEBUG"></AppenderRef>
+            <!--控制台-->
+            <AppenderRef ref="STDOUT"></AppenderRef>
+        </AsyncRoot>
+    </loggers>
+
+</configuration>

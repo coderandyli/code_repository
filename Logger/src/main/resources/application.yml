@@ -8,3 +8,9 @@
 #  # 日志输出级别
 #  level:
 #    com.coderandyli.logger.LoggerTest: debug
+
+
+logging:
+#  config: /log4j2.xml
+  level:
+    com.coderandyli: trace
