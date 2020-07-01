@@ -54,13 +54,17 @@
 
 package leetcode.editor.cn;
 
-//Java：删列造序
 
 /**
- * 解题
- *  - 时间复杂度：O(n)
- *  - 空间复杂度：O(1)
+ * Java：删列造序
  *
+ * 解题
+ *  - 复杂度
+ *      - 时间复杂度：O(n)
+ *      - 空间复杂度：O(1)
+ *
+ *  - topics
+ *      - 寻求最小值也算是贪心思想
  */
 public class P944DeleteColumnsToMakeSorted {
     public static void main(String[] args) {
