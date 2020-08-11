@@ -1,4 +1,4 @@
-package com.coderandyli.chapter_03.section_40;
+package com.coderandyli.chapter_03.section_40.knapsack;
 
 /**
  * 基于动态规划实现0-1背包问题
@@ -12,6 +12,9 @@ public class Case03 {
     /**
      * 0-1背包问题最优解 (背包中物品总重量的最大值)
      *
+     * 时间复杂度
+     *      O(n*w)
+     *
      * @param weight 物品重量数组
      * @param n 物品个数
      * @param w 背包最大重量
@@ -22,7 +25,7 @@ public class Case03 {
 
         // 第一行数据特殊处理
         states[0][0] = true;
-        while (weight[0] < w){
+        if (weight[0] < w){
             states[0][weight[0]] = true;
         }
 

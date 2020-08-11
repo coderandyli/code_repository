@@ -1,15 +1,18 @@
-package com.coderandyli.chapter_03.section_40;
+package com.coderandyli.chapter_03.section_40.knapsack;
 
 /**
- * 优化Case01 - 通过备忘录的方式，解决重复计算的问题
+ * 基于回溯算法实现0-1背包问题
  *  穷举、递归树
+ *
+ *  时间复杂度
+ *      O(2^n) 是指数级的
  *
  *
  * @author lizhenzhen
  * @version 1.0
  * @date 2020/7/19 上午10:06
  */
-public class Case02 {
+public class Case01 {
 
     /**
      * 结果：背包中物品最大重量
@@ -27,10 +30,6 @@ public class Case02 {
      * 背包承受的最大重量
      */
     private int w = 16;
-    /**
-     * 备忘录，默认为false 数组大小为int[n][w+1]
-     */
-    private boolean[][] mem = new boolean[n][w+1];
 
     /**
      * 计算结果
@@ -38,17 +37,12 @@ public class Case02 {
      * @param i 背包中第{i}物品
      * @param cw 当前背包重量
      */
-    public void calResult(int i, int cw) {
+    private void calResult(int i, int cw) {
         // 背包装满或者物品装完
         if (cw == w || i == n){
             if (cw > result) result = cw;
             return;
         }
-
-        // 重复状态
-        if (mem[i][cw]) return;
-        // 记录当前状态
-        mem[i][cw] = false;
 
         // 第{i}个物品不放入背包
         calResult(i+1, cw);
@@ -59,7 +53,7 @@ public class Case02 {
     }
 
     public static void main(String[] args) {
-        Case02 case01 = new Case02();
+        Case01 case01 = new Case01();
         case01.calResult(0, 0);
 
         System.out.println("result = " + case01.result);
