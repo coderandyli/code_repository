@@ -4,7 +4,7 @@ package com.coderandyli.exercise.section_40.knapsack;
  * 基于动态规划解决0-1背包问题
  * <p>
  * 分析
- * 1.
+ *      1.
  *
  * @author lizhenzhen
  * @version 1.0
