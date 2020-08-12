@@ -9,9 +9,25 @@ package com.coderandyli.chapter_03.section_40.knapsack;
  * @date 2020/7/19 下午7:37
  */
 public class Case04 {
+    /**
+     * 结果：背包中物品最大重量
+     */
+    private int result = Integer.MIN_VALUE;
+    /**
+     * 物品重量
+     */
+    private int[] items = {2, 2, 4, 6, 3};
+    /**
+     * 物品个数
+     */
+    private int n = 5;
+    /**
+     * 背包承受的最大重量
+     */
+    private int w = 9;
 
 
-    public static int knapsack(int[] items, int n, int w) {
+    public int knapsack() {
         boolean[] states = new boolean[w + 1]; // 默认值false
         // 第一行的数据要特殊处理，可以利用哨兵优化
         states[0] = true;
@@ -40,14 +56,8 @@ public class Case04 {
     }
 
     public static void main(String[] args) {
-        // 物品重量
-        int[] weight = {2, 2, 4, 6, 3};
-        // 物品个数
-        int n = 5;
-        // 背包承受的最大重量
-        int w = 9;
         Case04 case04 = new Case04();
-        int maxValue = case04.knapsack(weight, n, w);
+        int maxValue = case04.knapsack();
         System.out.println("maxvalue = " + maxValue);
     }
 }

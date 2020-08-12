@@ -16,9 +16,9 @@ public class Case02 {
      */
     private int result = Integer.MIN_VALUE;
     /**
-     * 物品重量
+     * 物品重量集合
      */
-    private int[] weight = {2,2,4,6,3};
+    private int[] items = {2,2,4,6,3};
     /**
      * 物品个数
      */
@@ -26,7 +26,7 @@ public class Case02 {
     /**
      * 背包承受的最大重量
      */
-    private int w = 16;
+    private int w = 9;
     /**
      * 备忘录，默认为false 数组大小为int[n][w+1]
      */
@@ -52,9 +52,9 @@ public class Case02 {
 
         // 第{i}个物品不放入背包
         calResult(i+1, cw);
-        if (cw + weight[i] <= w){
+        if (cw + items[i] <= w){
             // 第{i}个物品放入背包
-            calResult(i+1, cw+weight[i]);
+            calResult(i+1, cw+items[i]);
         }
     }
 

@@ -21,7 +21,7 @@ public class Case01 {
     /**
      * 物品重量
      */
-    private int[] weight = {2,2,4,6,3};
+    private int[] items = {2,2,4,6,3};
     /**
      * 物品个数
      */
@@ -29,7 +29,7 @@ public class Case01 {
     /**
      * 背包承受的最大重量
      */
-    private int w = 16;
+    private int w = 9;
 
     /**
      * 计算结果
@@ -46,9 +46,9 @@ public class Case01 {
 
         // 第{i}个物品不放入背包
         calResult(i+1, cw);
-        if (cw + weight[i] <= w){
+        if (cw + items[i] <= w){
             // 第{i}个物品放入背包
-            calResult(i+1, cw+weight[i]);
+            calResult(i+1, cw+items[i]);
         }
     }
 

@@ -3,6 +3,10 @@ package com.coderandyli.chapter_03.section_40.knapsack;
 /**
  * 基于动态规划实现0-1背包问题
  *
+ * 分析
+ *      step 1 将问题拆分为多个阶段
+ *      step 2 每个阶段对应相应的执行策略，并记录当前阶段状态
+ *      step 3 基于当前阶段的状态集合，推导下一阶段状态
  * @author lizhenzhen
  * @version 1.0
  * @date 2020/7/19 下午7:37
@@ -15,7 +19,7 @@ public class Case03 {
     /**
      * 物品重量
      */
-    private int[] weight = {2, 2, 4, 6, 3};
+    private int[] items = {2, 2, 4, 6, 3};
     /**
      * 物品个数
      */
@@ -23,7 +27,7 @@ public class Case03 {
     /**
      * 背包承受的最大重量
      */
-    private int w = 16;
+    private int w = 9;
 
     private boolean[][] states = new boolean[n][w + 1];
 
@@ -37,8 +41,8 @@ public class Case03 {
 
         // 第一行数据特殊处理
         states[0][0] = true;
-        if (weight[0] < w) {
-            states[0][weight[0]] = true;
+        if (items[0] < w) {
+            states[0][items[0]] = true;
         }
 
         // 动态规划状态转移（双重for循环）
@@ -51,9 +55,9 @@ public class Case03 {
             // 第i个物品放入背包
             for (int j = 0; j < w; j++) {
                 if (states[i - 1][j]) {
-                    if (j + weight[i] < w) {
+                    if (j + items[i] <= w) {
                         // 重复子问题：如果对应的状态为true, 不再进行赋值操作
-                        if (!states[i][j + weight[i]]) states[i][j + weight[i]] = true;
+                        if (!states[i][j + items[i]]) states[i][j + items[i]] = true;
                     }
                 }
             }
