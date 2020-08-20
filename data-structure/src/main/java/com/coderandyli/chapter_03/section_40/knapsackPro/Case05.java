@@ -29,7 +29,7 @@ public class Case05 {
     /**
      * 背包承受的最大重量
      */
-    private int w = 16;
+    private int w = 9;
 
     /**
      * 计算结果
