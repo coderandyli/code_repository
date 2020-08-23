@@ -43,85 +43,85 @@ package leetcode.editor.cn;
 //输出: true 
 // Related Topics 栈 字符串
 
-public class P20ValidParentheses{
+public class P20ValidParentheses {
     public static void main(String[] args) {
         Solution solution = new P20ValidParentheses().new Solution();
         // TO TEST
     }
-    
 
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public boolean isValid(String s) {
-        ArrayStack st = new ArrayStack(s.length());
-        for (int i = 0; i < s.length(); i++) {
-            switch (s.charAt(i)) {
-                case '(':
-                case '[':
-                case '{':
-                    st.push(s.charAt(i));
-                    break;
-                case ')':
-                    if (st.empty() || st.top() != '(') return false;
-                    st.pop();
-                    break;
-                case ']':
-                    if (st.empty() || st.top() != '[') return false;
-                    st.pop();
-                    break;
-                case '}':
-                    if (st.empty() || st.top() != '{') return false;
-                    st.pop();
-                    break;
+
+    //leetcode submit region begin(Prohibit modification and deletion)
+    class Solution {
+        public boolean isValid(String s) {
+            ArrayStack st = new ArrayStack(s.length());
+            for (int i = 0; i < s.length(); i++) {
+                switch (s.charAt(i)) {
+                    case '(':
+                    case '[':
+                    case '{':
+                        st.push(s.charAt(i));
+                        break;
+                    case ')':
+                        if (st.empty() || st.top() != '(') return false;
+                        st.pop();
+                        break;
+                    case ']':
+                        if (st.empty() || st.top() != '[') return false;
+                        st.pop();
+                        break;
+                    case '}':
+                        if (st.empty() || st.top() != '{') return false;
+                        st.pop();
+                        break;
+                }
+            }
+            return st.empty();
+        }
+
+        /**
+         * 顺序栈
+         */
+        public class ArrayStack {
+            private char[] items; //数组
+            private int count; //栈中元素个数
+            private int n; // 栈的大小
+
+            public ArrayStack(int capacity) {
+                this.items = new char[capacity];
+                this.n = capacity;
+                this.count = 0;
+            }
+
+            /**
+             * 入栈操作
+             *
+             * @param item
+             */
+            public boolean push(char item) {
+                // 将item放到下标为count的位置，并且count+1
+                items[count] = item;
+                count++;
+                return true;
+            }
+
+            /**
+             * 出栈
+             */
+            public char pop() {
+                char temp = items[count - 1];
+                count--;
+                return temp;
+            }
+
+            public Boolean empty() {
+                return count == 0;
+            }
+
+            public char top() {
+                return items[count - 1];
             }
         }
-        return st.empty();
     }
-
-    /**
-     * 顺序栈
-     */
-    public class ArrayStack {
-        private char[] items; //数组
-        private int count; //栈中元素个数
-        private int n; // 栈的大小
-
-        public ArrayStack(int capacity) {
-            this.items = new char[capacity];
-            this.n = capacity;
-            this.count = 0;
-        }
-
-        /**
-         * 入栈操作
-         *
-         * @param item
-         */
-        public boolean push(char item) {
-            // 将item放到下标为count的位置，并且count+1
-            items[count] = item;
-            count++;
-            return true;
-        }
-
-        /**
-         * 出栈
-         */
-        public char pop() {
-            char temp = items[count - 1];
-            count--;
-            return temp;
-        }
-
-        public Boolean empty() {
-            return count == 0;
-        }
-
-        public char top() {
-            return items[count - 1];
-        }
-    }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
