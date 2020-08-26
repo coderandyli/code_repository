@@ -1,6 +1,6 @@
-package com.coderandyli.source_analysis.hashMap;
+package com.coderandyli.source_analysis.map.hashMap;
 
-import com.coderandyli.source_analysis.hashMap.SingleLinkedList.SingleLinkedList;
+import com.coderandyli.source_analysis.map.hashMap.SingleLinkedList.SingleLinkedList;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.coderandyli.source_analysis.hashMap.SingleLinkedList;
+package com.coderandyli.source_analysis.map.hashMap.SingleLinkedList;
 
 /**
  * Created by lizhen on 2019-04-21

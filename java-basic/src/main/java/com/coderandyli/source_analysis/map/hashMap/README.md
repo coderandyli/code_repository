@@ -1,7 +1,7 @@
 # HashMap 源码
 ```
 
-package com.coderandyli.source_analysis.hashMap;
+package com.coderandyli.source_analysis.map.hashMap;
 package java.util;
 
 import java.io.IOException;

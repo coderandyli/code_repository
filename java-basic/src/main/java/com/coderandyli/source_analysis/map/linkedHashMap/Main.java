@@ -1,6 +1,6 @@
-package com.coderandyli.source_analysis.linkedHashMap;
+package com.coderandyli.source_analysis.map.linkedHashMap;
 
-import com.coderandyli.source_analysis.linkedHashMap.LRU.LRUCache;
+import com.coderandyli.source_analysis.map.linkedHashMap.LRU.LRUCache;
 import org.junit.Test;
 
 import java.util.HashMap;

@@ -6,6 +6,7 @@ import javax.annotation.PostConstruct;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 /**
  * Created by lizhen on 2019-10-29
@@ -28,6 +29,13 @@ public class ReflectClass {
 
     public static void main(String args[]) {
         ReflectClass.reflectPrivateMethod();
+
+        Class<?>[] interfaces = classBook.getInterfaces();
+        Arrays.stream(interfaces).forEach(System.out::println);
+
+        System.out.println("class name : " + classBook.getName() + " | " + classBook.getSimpleName());
+
+        reflectPrivateConstructor();
     }
 
     /**

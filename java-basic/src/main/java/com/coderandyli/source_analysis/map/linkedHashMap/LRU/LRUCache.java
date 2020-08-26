@@ -1,4 +1,4 @@
-package com.coderandyli.source_analysis.linkedHashMap.LRU;
+package com.coderandyli.source_analysis.map.linkedHashMap.LRU;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -18,7 +18,7 @@ public class LRUCache<K, V> extends LinkedHashMap<K, V> {
         /**
          * accessOrder = true时, LinkedHashMap本身就是一个支持LRU缓存淘汰策略的缓存系统
          * true 是表示按照访问时间排序，最近访问的元素会排在队末尾，详见下方test01方法
-         * @see com.coderandyli.source_analysis.linkedHashMap.Main
+         * @see com.coderandyli.source_analysis.map.linkedHashMap.Main
          */
         super(maxCacheSize, 0.75f, true);
         this.maxCacheSize = maxCacheSize;
