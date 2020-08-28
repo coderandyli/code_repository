@@ -29,8 +29,8 @@ package leetcode.editor.cn;
  * Java：寻找两个正序数组的中位数
  * <p>
  * 解题
- * - 复杂度
- * - 时间复杂度：
+ * <p>
+ * - 时间复杂度：O(m+n)
  * - 空间复杂度：
  * <p>
  * - topics
@@ -39,13 +39,35 @@ public class P4MedianOfTwoSortedArrays {
     public static void main(String[] args) {
         Solution solution = new P4MedianOfTwoSortedArrays().new Solution();
         // TO TEST
+
+        int[] nums1 = new int[]{1};
+        int[] nums2 = new int[]{1};
+        System.out.println(solution.findMedianSortedArrays(nums1, nums2));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+            int m = nums1.length, n = nums2.length;
+            int totalLength = m + n;
 
-            return 0d;
+            // nums1、nums2下标指针 和 中位数
+            int index1 = 0, index2 = 0, left = -1, right = -1;
+            for (int i = 0; i <= totalLength / 2; i++) {
+                left = right;
+                // nums1数组没有到最后，且此时num1的数值小于num2位置的数值
+                // 同时也要考虑num2数组越界的问题
+                if (index1 < m && (index2 >= n || nums1[index1] < nums2[index2])) {
+                    right = nums1[index1++];
+                } else {
+                    right = nums2[index2++];
+                }
+            }
+
+            // 判断是奇数还是偶数
+            // 如果是偶数，则中位数为（left + right）/ 2
+            // 如果是奇数，则中位数为 right / 2
+            return (totalLength % 2 == 0) ? (left + right) / 2.0 : right;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
