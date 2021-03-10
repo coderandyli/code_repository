@@ -10,7 +10,7 @@ public class HandlerC implements IHandler {
     public boolean handle() {
         boolean handle = false;
         // ignore business logic
-        System.out.println("class HandlerC, method handle()");
+        System.out.println("class HandlerC, method handler()");
         return handle;
     }
 }

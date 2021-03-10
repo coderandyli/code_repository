@@ -11,7 +11,7 @@ public class HandlerC extends Handler {
     public boolean handle() {
         boolean handled = false;
         // ignore business logic....
-        System.out.println("class HandlerC; method handle()");
+        System.out.println("class HandlerC; method handler()");
         if (!handled && succesor != null){
             succesor.handle();
         }

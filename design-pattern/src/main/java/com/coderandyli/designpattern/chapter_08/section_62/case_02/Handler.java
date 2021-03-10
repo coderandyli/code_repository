@@ -8,16 +8,16 @@ package com.coderandyli.designpattern.chapter_08.section_62.case_02;
  *  a abstract class of Handler
  */
 public abstract class Handler {
-    Handler succesor = null;
+    Handler successor = null;
 
-    public void setSuccesor(Handler succesor) {
-        this.succesor = succesor;
+    public void setSuccessor(Handler successor) {
+        this.successor = successor;
     }
 
     public void handle(){
         boolean handled = doHandle();
-        if (!handled && succesor != null){
-            succesor.handle();
+        if (!handled && successor != null){
+            successor.handle();
         }
     }
 

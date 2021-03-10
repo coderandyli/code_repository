@@ -1,0 +1,33 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: redis-demo
+r
+#  redis:
+#    sentinel:
+#      master: mymaster
+#      nodes: 39.104.124.39:26379
+
+#    host: 39.104.124.39
+#    port: 6379
+#    database: 1
+
+#    lettuce:
+#      pool:
+#        max-active: 10
+
+#    jedis:
+#      pool:
+#        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+#        max-wait: -1ms
+#        # 连接池最大连接数（使用负值表示没有限制）
+#        max-active: 100
+#        # 连接池中的最大空闲连接
+#        max-idle: 100
+#        # 连接池中的最小空闲连接
+#        min-idle: 1
+
+logging:
+  level:
+    com.coderandyli: debug

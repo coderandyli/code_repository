@@ -11,7 +11,7 @@ public class HandlerA extends Handler {
     public boolean doHandle() {
         boolean handled = false;
         // ignore business logic....
-        System.out.println("class HandlerA; method handle()");
+        System.out.println("class HandlerA; method handler()");
         return false;
     }
 }

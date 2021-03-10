@@ -5,20 +5,20 @@ package com.coderandyli.designpattern.chapter_08.section_62.case_02;
  * @version 1.0
  * @date 2020/3/26 下午1:34
  *
- * handle chain
+ * handler chain
  */
 public class HandleChain {
     private Handler head = null;
     private Handler tail = null;
     
     public void addHandler(Handler handler) {
-        handler.setSuccesor(null);
+        handler.setSuccessor(null);
         if (head == null){
             head = handler;
             tail = handler;
             return;
         }
-        tail.setSuccesor(handler);
+        tail.setSuccessor(handler);
         tail = handler;
     }
 

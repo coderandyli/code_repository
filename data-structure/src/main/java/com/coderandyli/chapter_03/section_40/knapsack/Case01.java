@@ -13,7 +13,6 @@ package com.coderandyli.chapter_03.section_40.knapsack;
  * @date 2020/7/19 上午10:06
  */
 public class Case01 {
-
     /**
      * 结果：背包中物品最大重量
      */

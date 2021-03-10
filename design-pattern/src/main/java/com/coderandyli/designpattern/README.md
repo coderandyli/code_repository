@@ -26,7 +26,7 @@
 
 
 # chapter_07
-## section_47 代理模式
+## section_48 代理模式
 
 ## section_49 桥接模式
 
@@ -49,11 +49,16 @@
 ## section_61 策略模式
 ## section_62 职责链模式
 ## section_63 职责链模式
+
 ## section_64 状态模式
+
 ## section_65 
 ## section_67 迭代器模式
+
 ## section_68 访问者模式
+
 ## section_70 备忘录模式
+
 ## section_72 解释器模式
 ## section_73
 

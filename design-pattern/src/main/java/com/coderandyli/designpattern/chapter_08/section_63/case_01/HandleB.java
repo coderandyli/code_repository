@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 public class HandleB implements Handle {
     @Override
     public void doHandle(HandleChain chain) {
-        log.info("class HandleB, method doHandle()");
+        log.info("class HandlerB, method doHandle()");
         chain.doHandle();
     }
 }

@@ -5,7 +5,7 @@ package com.coderandyli.designpattern.chapter_08.section_62.case_01;
  * @version 1.0
  * @date 2020/3/26 下午1:34
  *
- * handle chain
+ * handler chain
  */
 public class HandleChain {
     private Handler head = null;

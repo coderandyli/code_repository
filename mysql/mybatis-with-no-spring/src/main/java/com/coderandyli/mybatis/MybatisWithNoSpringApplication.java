@@ -20,8 +20,10 @@ public class MybatisWithNoSpringApplication {
 
     public static void main(String[] args) throws IOException {
         Reader reader = Resources.getResourceAsReader("mybatis.xml");
+        // 创建 sqlSession
         SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(reader);
         SqlSession session = sessionFactory.openSession();
+
         UserMapper userMapper = session.getMapper(UserMapper.class);
         User userDo = userMapper.selectById(8);
         System.out.println(userDo);

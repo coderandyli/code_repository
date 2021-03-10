@@ -34,8 +34,8 @@ public class P5LongestPalindromicSubstring {
 
     /**
      * 中心扩散的思路
-     *     示例："abcbad"
-     *      n = 6； 一共有 2n-1 个中心点，即：n 个单字符中心点；n-1 个双字符的中心点
+     * 示例："abcbad"
+     * n = 6； 一共有 2n-1 个中心点，即：n 个单字符中心点；n-1 个双字符的中心点
      */
     class Solution {
         public String longestPalindrome(String s) {
@@ -45,13 +45,12 @@ public class P5LongestPalindromicSubstring {
 
             char[] chars = s.toCharArray();
             int length = chars.length;
-            int left = 0, right = 0, longestLength = 0;
+            int left, right, longestLength = Integer.MIN_VALUE;
             String longestPalindromeStr = null;
 
             // 以单个字符为中心扩散,
             for (int i = 0; i < length; i++) {
-                left = i;
-                right = i;
+                left = right = i;
                 while (left >= 0 && right < length && chars[left] == chars[right]) {
                     left--;
                     right++;

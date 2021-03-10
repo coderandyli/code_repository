@@ -15,14 +15,13 @@ public class ExpressionInterpreter {
     public long interpret(String expression) {
         String[] elements = expression.split(" ");
         int length = elements.length;
-        for (int i = 0; i < (length+1)/2; ++i) {
+        for (int i = 0; i < (length + 1) / 2; ++i) {
             numbers.addLast(Long.parseLong(elements[i]));
         }
 
-        for (int i = (length+1)/2; i < length; ++i) {
+        for (int i = (length + 1) / 2; i < length; ++i) {
             String operator = elements[i];
-            boolean isValid = "+".equals(operator) || "-".equals(operator)
-                    || "*".equals(operator) || "/".equals(operator);
+            boolean isValid = checkIfValid(operator);
             if (!isValid) {
                 throw new RuntimeException("Expression is invalid: " + expression);
             }
@@ -47,5 +46,10 @@ public class ExpressionInterpreter {
         }
 
         return numbers.pop();
+    }
+
+    private boolean checkIfValid(String operator) {
+        return "+".equals(operator) || "-".equals(operator)
+                || "*".equals(operator) || "/".equals(operator);
     }
 }

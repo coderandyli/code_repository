@@ -9,7 +9,7 @@ import com.coderandyli.designpattern.chapter_08.section_61.case_02.sortAlg.ISort
  */
 public class Main {
     public static void main(String[] args) {
-        ISortAlg quickSort = SortAlgFactory.getSortAlg("MapReduceSort");
+        ISortAlg quickSort = SortAlgFactory.getSortAlg("QuickSort");
         quickSort.sort("");
     }
 }

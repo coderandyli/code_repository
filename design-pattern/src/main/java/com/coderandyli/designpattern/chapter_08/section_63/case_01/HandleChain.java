@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class HandleChain {
     // 当前执行到的handle
     private int pos = 0;
-    // handle 数量
+    // handler 数量
     private int n = 10;
     private ArrayList<Handle> handles = new ArrayList<>();
 

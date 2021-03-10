@@ -1,0 +1,2 @@
+- [https://www.cnblogs.com/keeya/p/10101547.html](https://www.cnblogs.com/keeya/p/10101547.html)
+- [log4j2配置文件log4j2.xml配置详解](https://blog.csdn.net/thekenofDIS/article/details/80439776)

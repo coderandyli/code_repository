@@ -1,5 +1,7 @@
 package com.coderandyli.designpattern.chapter_08.section_72.case_02;
 
+import com.coderandyli.designpattern.chapter_08.section_72.case_02.expression.*;
+
 import java.util.Deque;
 import java.util.LinkedList;
 
@@ -21,8 +23,7 @@ public class ExpressionInterpreter {
 
         for (int i = (length+1)/2; i < length; ++i) {
             String operator = elements[i];
-            boolean isValid = "+".equals(operator) || "-".equals(operator)
-                    || "*".equals(operator) || "/".equals(operator);
+            boolean isValid = checkIfValid(operator);
             if (!isValid) {
                 throw new RuntimeException("Expression is invalid: " + expression);
             }
@@ -49,5 +50,10 @@ public class ExpressionInterpreter {
         }
 
         return numbers.pop().interpret();
+    }
+
+    private boolean checkIfValid(String operator) {
+        return  "+".equals(operator) || "-".equals(operator)
+                || "*".equals(operator) || "/".equals(operator);
     }
 }

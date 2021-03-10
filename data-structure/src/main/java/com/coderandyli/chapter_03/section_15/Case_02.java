@@ -18,7 +18,7 @@ public class Case_02 {
 
         int mid = low + (hight - low) >> 1 ;
         if (items[mid] == value){
-            return value;
+            return mid;
         }else if (items[mid] < value){
             low = mid + 1;
         }else {
