@@ -10,6 +10,8 @@ package com.coderandyli.designpattern.practices.singleton;
  * 参考资料
  * - https://www.jianshu.com/p/d82cbb83f393?from=timeline
  * - http://ifeve.com/java-volatile关键字/#more-45241
+ *
+ *
  */
 public class Singleton03 {
 
@@ -29,6 +31,10 @@ public class Singleton03 {
     private Singleton03() {
     }
 
+    /**
+     * 代码性能分析
+     * - 只有第一次访问时，才会进入同步代码块，避免了 synchronized带来了性能损耗。
+     */
     public static Singleton03 getInstance() {
         // 实例不存在，进入
         if (instance == null) {
@@ -39,7 +45,6 @@ public class Singleton03 {
                     instance = new Singleton03();
                 }
             }
-            instance = new Singleton03();
         }
         return instance;
     }
