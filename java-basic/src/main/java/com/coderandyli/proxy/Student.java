@@ -10,11 +10,11 @@ import lombok.extern.slf4j.Slf4j;
 public class Student implements Behavior {
     @Override
     public void eat() {
-        log.debug("student eat....");
+        System.out.println("student eat....");
     }
 
     @Override
     public void say(String str) {
-        log.debug("student say....");
+        System.out.println("student say....");
     }
 }
