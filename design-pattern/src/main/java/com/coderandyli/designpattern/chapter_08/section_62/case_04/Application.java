@@ -12,6 +12,7 @@ public class Application {
         filterChain.addwordFilter(new PoliticalWordFilter());
         filterChain.addwordFilter(new SexyWordFilter());
         filterChain.doFilter("金三胖统治下的朝鲜人民军所向披靡");
+        System.out.println("------------------------------------------------");
         filterChain.doFilter("this is a healthy message");
     }
 }

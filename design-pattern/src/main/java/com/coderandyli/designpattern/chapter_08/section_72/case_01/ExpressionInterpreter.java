@@ -10,15 +10,20 @@ import java.util.LinkedList;
  */
 
 public class ExpressionInterpreter {
+    /**
+     * 先进先出的队列
+     */
     private Deque<Long> numbers = new LinkedList<>();
 
     public long interpret(String expression) {
         String[] elements = expression.split(" ");
         int length = elements.length;
+        // 获取数据到numbers
         for (int i = 0; i < (length + 1) / 2; ++i) {
             numbers.addLast(Long.parseLong(elements[i]));
         }
 
+        // 基于先进先出的队列，不断入栈出栈，进行运算，直至运算完毕；
         for (int i = (length + 1) / 2; i < length; ++i) {
             String operator = elements[i];
             boolean isValid = checkIfValid(operator);

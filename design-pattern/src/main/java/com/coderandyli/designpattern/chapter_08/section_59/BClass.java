@@ -7,6 +7,7 @@ package com.coderandyli.designpattern.chapter_08.section_59;
  */
 public class BClass {
     public void process(ICallback callback) {
+        System.out.println("执行BClass#process方法....");
         callback.methodToCallback();
     }
 }
