@@ -11,7 +11,7 @@ public class AClass {
         bClass.process(new ICallback() {
             @Override
             public void methodToCallback() {
-                System.out.println("Call back me.");
+                System.out.println("执行完成之后回调");
             }
         });
     }
