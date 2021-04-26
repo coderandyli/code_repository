@@ -24,7 +24,7 @@ public class MyLockBaseAqs {
         protected boolean tryAcquire(int arg) {
             if (compareAndSetState(0, 1)) {
                 // Sets the thread that currently owns exclusive access.
-                // 设置当前现成独占访问权限
+                // 设置当前现成独占访问权限（当期线程获取锁）
                 setExclusiveOwnerThread(Thread.currentThread());
                 return true;
             }
