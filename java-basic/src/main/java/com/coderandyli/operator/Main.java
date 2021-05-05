@@ -29,7 +29,7 @@ public class Main {
     }
     /**
      * 移位运算符
-     * <<  左移运算符
+     * <<  左移运算符 （变大）
      */
     @Test
     public void test01() {
@@ -39,6 +39,10 @@ public class Main {
         log.info("【二进制形式】：位移前：{}, 位移后：{}", Integer.toBinaryString(leftShift), Integer.toBinaryString(newLeftShift));
         double pow = Math.pow(2, 3); // 2的3次方
         log.info(" 10 * (2^3) = {}， 即：x << n 等价于 x * 2^n", leftShift * pow);
+
+        // 最大2的幂次方
+        int MAX_POWER_OF_TWO = 1 << (Integer.SIZE - 2);
+        log.info("MAX_POWER_OF_TWO = {}", MAX_POWER_OF_TWO);
     }
 
     /**
