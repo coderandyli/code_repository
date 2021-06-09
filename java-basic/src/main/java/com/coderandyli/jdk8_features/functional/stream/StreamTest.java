@@ -12,7 +12,9 @@ import java.util.stream.Stream;
  */
 public class StreamTest {
 
+
     public static void main(String[] args) {
+        // 体现了函数式编程易于理解。
         Optional<Integer> result = Stream.of("f", "ba", "hello") // of返回Stream<String>对象
                 .map(s -> s.length()) // map返回Stream<Integer>对象
                 .filter(l -> l <= 3) // filter返回Stream<Integer>对象
