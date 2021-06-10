@@ -74,6 +74,8 @@ public class StreamDemo {
             list.add(new Book("Spring MVC", 300));
             list.add(new Book("Spring MVC", 300));
         }
+
+        // 过滤名字相同的，并打印
         list.stream().filter(distinctByKey(b -> b.getName()))
                 .forEach(book -> System.out.println(book.getName()+ "," + book.getPrice()));
     }
