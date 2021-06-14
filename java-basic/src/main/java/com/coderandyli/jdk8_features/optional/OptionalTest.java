@@ -16,16 +16,26 @@ public class OptionalTest {
     @Test(expected = NoSuchElementException.class)
     public void whenCreateEmptyOptional_thenNull() {
         Optional<User> emptyOpt = Optional.empty();
+
+        // true if have the value; false otherwise
+        boolean present = emptyOpt.isPresent();
+        Assert.assertFalse(present);
+
+        // get the value
         emptyOpt.get();
     }
 
+
     @Test(expected = NullPointerException.class)
     public void whenCreateOfEmptyOptional_thenNullPointerException() {
-        Optional<User> opt = Optional.of(null);
+        // 创建一个包含某值的Optional对象，如果传入的null，会报NPE
+        Optional<User> opt1 = Optional.of(null);
+
     }
 
     @Test()
     public void whenCreateOfEmptyOptional_thenOk() {
+        // 创建一个包含某值的Optional对象，如果传入的null，不会报NPE
         Optional<User> opt = Optional.ofNullable(null);
     }
 
@@ -33,6 +43,9 @@ public class OptionalTest {
     public void whenCreateOfNullableOptional_thenOk() {
         String name = "John";
         Optional<String> opt = Optional.ofNullable(name);
+
+        // get the object in the class Optional
+        String value = opt.get();
         Assert.assertEquals("John", opt.get());
     }
 
@@ -42,8 +55,11 @@ public class OptionalTest {
     @Test
     public void whenEmptyValue_thenReturnDefault() {
         User user = null;
+        User user1 = new User("coderandyli@163.com","123456");
         User user2 = new User("anna@gmail.com", "1234");
-        User result = Optional.ofNullable(user).orElse(user2);
+
+        // orElse：有则返回，无则返回设定的的默认值
+        User result = Optional.ofNullable(user1).orElse(user2);
         Assert.assertEquals(user2.getEmail(), result.getEmail());
     }
 

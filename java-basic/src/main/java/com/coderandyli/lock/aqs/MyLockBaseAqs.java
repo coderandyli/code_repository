@@ -1,6 +1,4 @@
-package com.coderandyli.test;
-
-import com.sun.corba.se.impl.orbutil.concurrent.Sync;
+package com.coderandyli.lock.aqs;
 
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
@@ -9,10 +7,9 @@ import java.util.concurrent.locks.AbstractQueuedSynchronizer;
  * @version 1.0
  * @date 2021/4/19 下午11:20
  * <p>
- * https://zhuanlan.zhihu.com/p/67069328
+ * 基于AQS自定义锁
  */
 public class MyLockBaseAqs {
-
     /**
      * 同步器
      */
@@ -27,7 +24,7 @@ public class MyLockBaseAqs {
         protected boolean tryAcquire(int arg) {
             if (compareAndSetState(0, 1)) {
                 // Sets the thread that currently owns exclusive access.
-                // 设置当前现成独占访问权限
+                // 设置当前现成独占访问权限（当期线程获取锁）
                 setExclusiveOwnerThread(Thread.currentThread());
                 return true;
             }
@@ -58,10 +55,8 @@ public class MyLockBaseAqs {
 
 
     static int cnt = 0;
-
     public static void main(String[] args) {
         MyLockBaseAqs myLock = new MyLockBaseAqs();
-
 
         Runnable runnable = new Runnable() {
             @Override

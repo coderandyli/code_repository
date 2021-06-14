@@ -7,11 +7,11 @@ import java.util.stream.Stream;
 
 /**
  * Created by lizhen on 2019-05-15
- *
+ * <p>
  * 简单的lamda表达式演示
  */
 
-public class Main {
+public class LamdaTest {
 
     private String[] players = {
             "Rafael Nadal",
@@ -29,8 +29,8 @@ public class Main {
      * 使用lamda表达式，进行遍历
      */
     @Test
-    public void test01(){
-        List<String> playerList =  Arrays.asList(players);
+    public void test01() {
+        List<String> playerList = Arrays.asList(players);
 
         // 使用 lambda 表达式以及函数操作(functional operation)
         playerList.forEach((palyer) -> System.out.println(palyer + ";"));
@@ -41,11 +41,11 @@ public class Main {
 
     /**
      * lamda 实现接口或抽象方法 （包inner_class有类似）
-     *
+     * <p>
      * Runnable 为例
      */
     @Test
-    public void test02(){
+    public void test02() {
         // 使用匿名内部类
         new Thread(new Runnable() {
             @Override
@@ -61,14 +61,15 @@ public class Main {
 
     /**
      * 使用Lambdas排序集合
+     * <p>
+     * Comparator 排序详见 包comparator
      *
-     *Comparator 排序详见 包comparator
      * @see com.coderandyli.comparator.Test
-     *
+     * <p>
      * 1、根据name 首字母排序
      */
     @Test
-    public void test03(){
+    public void test03() {
 
         // 1.1 使用匿名内部类根据 name 排序 players
         /*Arrays.sort(players, new Comparator<String>() {
@@ -86,10 +87,9 @@ public class Main {
     }
 
     @Test
-    public void test04(){
+    public void test04() {
         Stream<String> stream = Arrays.asList(players).stream();
     }
-
 
 
 }

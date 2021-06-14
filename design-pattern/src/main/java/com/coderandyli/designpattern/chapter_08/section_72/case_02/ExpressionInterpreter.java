@@ -10,7 +10,6 @@ import java.util.LinkedList;
  * @version 1.0
  * @date 2020/4/17 下午3:02
  */
-
 public class ExpressionInterpreter {
     private Deque<Expression> numbers = new LinkedList<>();
 

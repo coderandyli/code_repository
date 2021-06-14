@@ -8,6 +8,7 @@ package com.coderandyli.designpattern.chapter_08.section_72.case_01;
 public class Main {
     public static void main(String[] args) {
         ExpressionInterpreter interpreter = new ExpressionInterpreter();
+        // ((8 - 3) + 2) * 4 = 28
         long result = interpreter.interpret("8 3 2 4 - + *");
         System.out.println(result);
     }
