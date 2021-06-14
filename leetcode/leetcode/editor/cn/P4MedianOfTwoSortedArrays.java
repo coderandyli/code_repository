@@ -23,7 +23,7 @@
 // 
 // Related Topics 数组 二分查找 分治算法
 
-package leetcode.editor.cn;
+package editor.cn;
 
 /**
  * Java：寻找两个正序数组的中位数
