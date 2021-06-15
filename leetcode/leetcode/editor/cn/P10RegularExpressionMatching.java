@@ -57,7 +57,7 @@
 //输出: false 
 // Related Topics 字符串 动态规划 回溯算法
 
-package leetcode.editor.cn;
+package editor.cn;
 /**
  * Java：正则表达式匹配
  *
@@ -76,7 +76,7 @@ public class P10RegularExpressionMatching{
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public boolean isMatch(String s, String p) {
-
+        return false;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

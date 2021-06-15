@@ -12,7 +12,7 @@
 // 
 // Related Topics 链表 数学
 
-package leetcode.editor.cn;
+package editor.cn;
 
 /**
  * Java：两数相加

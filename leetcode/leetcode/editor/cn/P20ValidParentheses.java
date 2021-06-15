@@ -1,4 +1,4 @@
-package leetcode.editor.cn;
+package editor.cn;
 
 /****************** 有效的括号 ******************/
 

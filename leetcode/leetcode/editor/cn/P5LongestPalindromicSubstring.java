@@ -1,4 +1,4 @@
-package leetcode.editor.cn;
+package editor.cn;
 
 /****************** 最长回文子串 ******************/
 
@@ -24,9 +24,6 @@ public class P5LongestPalindromicSubstring {
         System.out.println(solution.longestPalindrome("abcbad"));
 
         System.out.println(solution.longestPalindrome("abccbad"));
-
-        String str = "aaa";
-        System.out.println(str.toCharArray().length);
     }
 
 

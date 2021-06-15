@@ -34,7 +34,7 @@
 // 
 // Related Topics 贪心算法
 
-package leetcode.editor.cn;
+package editor.cn;
 
 /**
  * Java：分发饼干
