@@ -1,9 +1,11 @@
-package com.coderandyli.reordering;
+package com.coderandyli.lock.reordering;
 
 /**
  * @author lizhenzhen
  * @version 1.0
  * @date 2021/3/9 下午5:57
+ *
+ * 指令重排序测试
  */
 public class Reordering {
     static int x = 0, y = 0;
