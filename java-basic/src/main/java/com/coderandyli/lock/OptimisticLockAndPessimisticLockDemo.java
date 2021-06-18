@@ -3,6 +3,9 @@ package com.coderandyli.lock;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * 悲观锁和乐观锁示例
+ */
 public class OptimisticLockAndPessimisticLockDemo {
 
     // -------------------------- 悲观锁调用方式 ------------------------------
