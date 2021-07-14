@@ -26,13 +26,11 @@ public class CountDownLatchDemo {
             for (int i = 0; i < 10; ++i) // create and start threads
                 new Thread(new Worker(startSignal, doneSignal)).start();
 
-            // doSomethingElse();            // don't let run yet
             System.out.println("doSomethingElse， startSignal即将减一");
-            startSignal.countDown();      // let all threads proceed
-            System.out.println("startSignal已释放");
-            // doSomethingElse();
-            doneSignal.await();           // wait for all to finish
-            System.out.println("Worker 已经执行完毕...");
+            startSignal.countDown();      // let all threads procee 让所有线程继续
+            System.out.println("收到start信号，即将开始...");
+            doneSignal.await();           // wait for all to finish 等待所有线程工作完成
+            System.out.println("收到done信息，工作完成");
         }
     }
 
