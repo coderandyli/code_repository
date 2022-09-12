@@ -15,6 +15,7 @@
 
 package editor.cn;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,6 +33,10 @@ public class P1TwoSum {
     public static void main(String[] args) {
         Solution solution = new P1TwoSum().new Solution();
         // TO TEST
+        int[] nums = {2, 7, 11, 15};
+        int target = 9;
+        int[] result = solution.twoSum(nums, target);
+        System.out.println(Arrays.toString(result));
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
